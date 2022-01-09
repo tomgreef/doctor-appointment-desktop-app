@@ -1,9 +1,0 @@
-c:\users\alumno\documents\visual studio 2013\Projects\GESDAPPER\GESDAPPER\bin\Debug\GESDAPPER.exe.config
-E:\Trabajo\gestion-dapper\GESDAPPER\bin\Debug\GESDAPPER.exe.config
-E:\Trabajo\gestion-dapper\GESDAPPER\obj\Debug\GESDAPPER.csprojResolveAssemblyReference.cache
-E:\Trabajo\gestion-dapper\GESDAPPER\obj\Debug\GESDAPPER.Properties.Resources.resources
-E:\Trabajo\gestion-dapper\GESDAPPER\obj\Debug\GESDAPPER.csproj.GenerateResource.Cache
-E:\Trabajo\gestion-dapper\GESDAPPER\bin\Debug\GESDAPPER.exe
-E:\Trabajo\gestion-dapper\GESDAPPER\bin\Debug\GESDAPPER.pdb
-E:\Trabajo\gestion-dapper\GESDAPPER\obj\Debug\GESDAPPER.exe
-E:\Trabajo\gestion-dapper\GESDAPPER\obj\Debug\GESDAPPER.pdb
