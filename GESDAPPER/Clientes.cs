@@ -16,5 +16,15 @@ namespace GESDAPPER
         {
             InitializeComponent();
         }
+
+        private void textBox_oi_espera_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_oi_cilindro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

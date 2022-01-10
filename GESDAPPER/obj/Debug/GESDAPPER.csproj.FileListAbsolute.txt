@@ -7,3 +7,6 @@ E:\Trabajo\gestion-dapper\GESDAPPER\bin\Debug\GESDAPPER.exe
 E:\Trabajo\gestion-dapper\GESDAPPER\bin\Debug\GESDAPPER.pdb
 E:\Trabajo\gestion-dapper\GESDAPPER\obj\Debug\GESDAPPER.exe
 E:\Trabajo\gestion-dapper\GESDAPPER\obj\Debug\GESDAPPER.pdb
+\\VBOXSVR\Dapper\gestion-dapper\GESDAPPER\bin\Debug\GESDAPPER.exe.config
+\\VBOXSVR\Dapper\gestion-dapper\GESDAPPER\obj\Debug\GESDAPPER.exe
+\\VBOXSVR\Dapper\gestion-dapper\GESDAPPER\obj\Debug\GESDAPPER.pdb
