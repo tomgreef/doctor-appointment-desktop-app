@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 namespace GESDAPPER
 {
     [Table("tClient")]
-    class Client
+   public class Client
     {
         [Key]
         public string NIF { get; set; }

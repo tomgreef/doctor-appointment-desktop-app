@@ -153,6 +153,7 @@
             this.buttonRevisiones.TabIndex = 11;
             this.buttonRevisiones.Text = "Revisiones";
             this.buttonRevisiones.UseVisualStyleBackColor = true;
+            this.buttonRevisiones.Click += new System.EventHandler(this.buttonRevisiones_Click);
             // 
             // textBoxNIF
             // 

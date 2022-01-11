@@ -25,11 +25,20 @@ namespace GESDAPPER.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=SQLOLEDB;Data Source=localhost;Integrated Security=SSPI;Initial Catalog=" +
-            "GIO")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=localhost\\SQLEXPRESS;Database=GIO;Trusted_Connection=True;")]
         public string ConnectionString {
             get {
                 return ((string)(this["ConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-6289C7L;Initial Catalog=GIO;Integrated Security=True")]
+        public string GIOConnectionString {
+            get {
+                return ((string)(this["GIOConnectionString"]));
             }
         }
     }
