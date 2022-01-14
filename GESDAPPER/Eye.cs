@@ -11,10 +11,12 @@ namespace GESDAPPER
     class Eye
     {
         [Key]
-        public int? ID { get; set; }
-
-        public Client Cliente { get; set; }
-        public string Consulta { get; set; }
+        public int ID { get; set; }
+        [Computed]
+        public Client Cliente { get; set ; }
+        public string NIF { get{
+            return Cliente.NIF; } set{} }
+        public DateTime Consulta { get; set; }
         public double OdEsfera { get; set; }
         public double OdCilindro { get; set; }
         public double OdAdicion { get; set; }

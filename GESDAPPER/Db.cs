@@ -19,7 +19,9 @@ namespace GESDAPPER
         public void Save<T>(T elem) where T : class
         {
             Dapper.DefaultTypeMap.MatchNamesWithUnderscores = true;
+
             Query(c => c.Insert(elem));
+            
         }
 
         public T GetById<T>(string id) where T : class
