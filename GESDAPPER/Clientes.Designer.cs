@@ -53,9 +53,6 @@
             this.buttonLimpiar = new System.Windows.Forms.Button();
             this.buttonSalir = new System.Windows.Forms.Button();
             this.dataGridViewClientes = new System.Windows.Forms.DataGridView();
-            this.gIODataSet = new GESDAPPER.GIODataSet();
-            this.tEyeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tEyeTableAdapter = new GESDAPPER.GIODataSetTableAdapters.tEyeTableAdapter();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nIFDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cONSULTADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,9 +64,12 @@
             this.oICILINDRODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oIADICIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oIAGUDEZADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tEyeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gIODataSet = new GESDAPPER.GIODataSet();
+            this.tEyeTableAdapter = new GESDAPPER.GIODataSetTableAdapters.tEyeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gIODataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tEyeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gIODataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // labelCliete
@@ -267,6 +267,8 @@
             // 
             // dataGridViewClientes
             // 
+            this.dataGridViewClientes.AllowUserToAddRows = false;
+            this.dataGridViewClientes.AllowUserToDeleteRows = false;
             this.dataGridViewClientes.AutoGenerateColumns = false;
             this.dataGridViewClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -284,23 +286,10 @@
             this.dataGridViewClientes.DataSource = this.tEyeBindingSource;
             this.dataGridViewClientes.Location = new System.Drawing.Point(12, 37);
             this.dataGridViewClientes.Name = "dataGridViewClientes";
+            this.dataGridViewClientes.ReadOnly = true;
             this.dataGridViewClientes.Size = new System.Drawing.Size(698, 91);
             this.dataGridViewClientes.TabIndex = 23;
             this.dataGridViewClientes.SelectionChanged += new System.EventHandler(this.dataGridViewClientes_SelectionChanged);
-            // 
-            // gIODataSet
-            // 
-            this.gIODataSet.DataSetName = "GIODataSet";
-            this.gIODataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tEyeBindingSource
-            // 
-            this.tEyeBindingSource.DataMember = "tEye";
-            this.tEyeBindingSource.DataSource = this.gIODataSet;
-            // 
-            // tEyeTableAdapter
-            // 
-            this.tEyeTableAdapter.ClearBeforeFill = true;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -314,60 +303,84 @@
             this.nIFDataGridViewTextBoxColumn.DataPropertyName = "NIF";
             this.nIFDataGridViewTextBoxColumn.HeaderText = "NIF";
             this.nIFDataGridViewTextBoxColumn.Name = "nIFDataGridViewTextBoxColumn";
+            this.nIFDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cONSULTADataGridViewTextBoxColumn
             // 
             this.cONSULTADataGridViewTextBoxColumn.DataPropertyName = "CONSULTA";
             this.cONSULTADataGridViewTextBoxColumn.HeaderText = "CONSULTA";
             this.cONSULTADataGridViewTextBoxColumn.Name = "cONSULTADataGridViewTextBoxColumn";
+            this.cONSULTADataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // oDESFERADataGridViewTextBoxColumn
             // 
             this.oDESFERADataGridViewTextBoxColumn.DataPropertyName = "OD_ESFERA";
             this.oDESFERADataGridViewTextBoxColumn.HeaderText = "OD_ESFERA";
             this.oDESFERADataGridViewTextBoxColumn.Name = "oDESFERADataGridViewTextBoxColumn";
+            this.oDESFERADataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // oDCILINDRODataGridViewTextBoxColumn
             // 
             this.oDCILINDRODataGridViewTextBoxColumn.DataPropertyName = "OD_CILINDRO";
             this.oDCILINDRODataGridViewTextBoxColumn.HeaderText = "OD_CILINDRO";
             this.oDCILINDRODataGridViewTextBoxColumn.Name = "oDCILINDRODataGridViewTextBoxColumn";
+            this.oDCILINDRODataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // oDADICIONDataGridViewTextBoxColumn
             // 
             this.oDADICIONDataGridViewTextBoxColumn.DataPropertyName = "OD_ADICION";
             this.oDADICIONDataGridViewTextBoxColumn.HeaderText = "OD_ADICION";
             this.oDADICIONDataGridViewTextBoxColumn.Name = "oDADICIONDataGridViewTextBoxColumn";
+            this.oDADICIONDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // oDAGUDEZADataGridViewTextBoxColumn
             // 
             this.oDAGUDEZADataGridViewTextBoxColumn.DataPropertyName = "OD_AGUDEZA";
             this.oDAGUDEZADataGridViewTextBoxColumn.HeaderText = "OD_AGUDEZA";
             this.oDAGUDEZADataGridViewTextBoxColumn.Name = "oDAGUDEZADataGridViewTextBoxColumn";
+            this.oDAGUDEZADataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // oIESFERADataGridViewTextBoxColumn
             // 
             this.oIESFERADataGridViewTextBoxColumn.DataPropertyName = "OI_ESFERA";
             this.oIESFERADataGridViewTextBoxColumn.HeaderText = "OI_ESFERA";
             this.oIESFERADataGridViewTextBoxColumn.Name = "oIESFERADataGridViewTextBoxColumn";
+            this.oIESFERADataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // oICILINDRODataGridViewTextBoxColumn
             // 
             this.oICILINDRODataGridViewTextBoxColumn.DataPropertyName = "OI_CILINDRO";
             this.oICILINDRODataGridViewTextBoxColumn.HeaderText = "OI_CILINDRO";
             this.oICILINDRODataGridViewTextBoxColumn.Name = "oICILINDRODataGridViewTextBoxColumn";
+            this.oICILINDRODataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // oIADICIONDataGridViewTextBoxColumn
             // 
             this.oIADICIONDataGridViewTextBoxColumn.DataPropertyName = "OI_ADICION";
             this.oIADICIONDataGridViewTextBoxColumn.HeaderText = "OI_ADICION";
             this.oIADICIONDataGridViewTextBoxColumn.Name = "oIADICIONDataGridViewTextBoxColumn";
+            this.oIADICIONDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // oIAGUDEZADataGridViewTextBoxColumn
             // 
             this.oIAGUDEZADataGridViewTextBoxColumn.DataPropertyName = "OI_AGUDEZA";
             this.oIAGUDEZADataGridViewTextBoxColumn.HeaderText = "OI_AGUDEZA";
             this.oIAGUDEZADataGridViewTextBoxColumn.Name = "oIAGUDEZADataGridViewTextBoxColumn";
+            this.oIAGUDEZADataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tEyeBindingSource
+            // 
+            this.tEyeBindingSource.DataMember = "tEye";
+            this.tEyeBindingSource.DataSource = this.gIODataSet;
+            // 
+            // gIODataSet
+            // 
+            this.gIODataSet.DataSetName = "GIODataSet";
+            this.gIODataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tEyeTableAdapter
+            // 
+            this.tEyeTableAdapter.ClearBeforeFill = true;
             // 
             // Clientes
             // 
@@ -402,8 +415,8 @@
             this.Text = "Clientes";
             this.Load += new System.EventHandler(this.Clientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gIODataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tEyeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gIODataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

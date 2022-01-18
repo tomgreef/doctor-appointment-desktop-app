@@ -17,6 +17,7 @@ namespace GESDAPPER
         private Eye seleccionado;
         private Client main;
         private static readonly string _connectionString = Properties.Settings.Default.ConnectionString;
+        
         public Clientes(Client client)
         {
             InitializeComponent();
