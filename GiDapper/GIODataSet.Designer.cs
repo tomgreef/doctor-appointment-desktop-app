@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace GESDAPPER {
+namespace GiDapper {
     
     
     /// <summary>
@@ -1514,7 +1514,7 @@ namespace GESDAPPER {
         }
     }
 }
-namespace GESDAPPER.GIODataSetTableAdapters {
+namespace GiDapper.GIODataSetTableAdapters {
     
     
     /// <summary>
@@ -1686,7 +1686,7 @@ SELECT NIF, NOMBRE, APELLIDOS, EDAD FROM tClient WHERE (NIF = @NIF)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::GESDAPPER.Properties.Settings.Default.GIOConnectionString;
+            this._connection.ConnectionString = global::GiDapper.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2146,7 +2146,7 @@ SELECT ID, NIF, CONSULTA, OD_ESFERA, OD_CILINDRO, OD_ADICION, OD_AGUDEZA, OI_ESF
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::GESDAPPER.Properties.Settings.Default.GIOConnectionString;
+            this._connection.ConnectionString = global::GiDapper.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

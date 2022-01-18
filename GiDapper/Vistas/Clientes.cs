@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace GESDAPPER
+namespace GiDapper
 {
     public partial class Clientes : Form
     {
         private Eye seleccionado;
         private Client main;
-        private static readonly string _connectionString = Properties.Settings.Default.ConnectionString;
+        private static readonly string _connectionString = Settings.Default.ConnectionString;
         
         public Clientes(Client client)
         {
@@ -46,7 +46,7 @@ namespace GESDAPPER
             if (dataGridViewClientes.SelectedRows.Count > 0)
             {
                 string id = dataGridViewClientes.SelectedRows[0].Cells[0].Value.ToString();
-                Db db = new Db();
+                Db db = new();
                 seleccionado = db.GetById<Eye>(id);
                 MostrarSeleccionado();
                 
@@ -125,7 +125,7 @@ namespace GESDAPPER
             {
 
                 
-                Cliente = main,
+                NIF = main.NIF,
                 Consulta = monthCalendar.SelectionRange.Start,
                 OdEsfera = Convert.ToDouble(textBox_od_espera.Text),
                 OiEsfera = Convert.ToDouble(textBox_oi_espera.Text),
@@ -165,15 +165,6 @@ namespace GESDAPPER
                 seleccionado.Provincia_Paciente = (Provincia)lProvincia.SelectedItem;
             if (!seleccionado.e_mail_Paciente.Equals(tEmail.Text))
                 seleccionado.e_mail_Paciente = tEmail.Text; */
-        }
-
-        private int getLastId()
-        {
-
-            string sql = "select max(ID) from GIO.dbo.tEye ";
-            //como ejecuto esto ?
-            return 0;
-            
         }
     }
 }

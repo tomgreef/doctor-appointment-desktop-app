@@ -5,17 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GESDAPPER
+namespace GiDapper
 {
     [Table("tEye")]
-    class Eye
+    public class Eye
     {
         [Key]
         public int ID { get; set; }
-        [Computed]
-        public Client Cliente { get; set ; }
-        public string NIF { get{
-            return Cliente.NIF; } set{} }
+        public string NIF { get; set; }
         public DateTime Consulta { get; set; }
         public double OdEsfera { get; set; }
         public double OdCilindro { get; set; }

@@ -1,4 +1,4 @@
-﻿namespace GESDAPPER
+﻿namespace GiDapper
 {
     partial class Clientes
     {
@@ -65,8 +65,8 @@
             this.oIADICIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oIAGUDEZADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tEyeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gIODataSet = new GESDAPPER.GIODataSet();
-            this.tEyeTableAdapter = new GESDAPPER.GIODataSetTableAdapters.tEyeTableAdapter();
+            this.gIODataSet = new GiDapper.GIODataSet();
+            this.tEyeTableAdapter = new GiDapper.GIODataSetTableAdapters.tEyeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tEyeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gIODataSet)).BeginInit();

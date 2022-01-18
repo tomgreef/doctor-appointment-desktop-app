@@ -1,30 +1,23 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Dapper.FluentMap;
-using Dapper;
-using System.Data.Linq.Mapping;
 
-
-
-namespace GESDAPPER
+namespace GiDapper
 {
     static class Program
     {
         /// <summary>
-        /// Punto de entrada principal para la aplicación.
+        ///  The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
-            
-
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Revisiones());
-
         }
     }
 }

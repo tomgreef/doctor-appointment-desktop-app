@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Dapper.Contrib.Extensions;
-using System.Data.SqlClient;
+﻿using Dapper.Contrib.Extensions;
 
-namespace GESDAPPER
+namespace GiDapper
 {
     [Table("tClient")]
-   public class Client
+    public class Client
     {
         [ExplicitKey]
         public string NIF { get; set; }

@@ -1,4 +1,4 @@
-﻿namespace GESDAPPER
+﻿namespace GiDapper
 {
     partial class Revisiones
     {
