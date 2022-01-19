@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using GiDapper.Database;
+using System;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -10,24 +10,24 @@ namespace GiDapper
         private Client seleccionado = null; //hay que completar esto, cuando el usuario selecciona una persona y selecciona revisiones usamos esto para pasar el cliente  
         private int MAX_AGE = 100;
 
+        private readonly ClientDb db;
+
         public Revisiones()
         {
             InitializeComponent();
+            db = new ClientDb();
         }
 
         private void Revisiones_Load(object sender, EventArgs e)
         {
             try
             {
-                Db db = new Db();
-                List<Client> clients = db.GetAll<Client>().ToList();
-
-                foreach (Client c in clients)
-                    this.dataGridView1.Rows.Add(c.NIF, c.Nombre, c.Apellidos, c.Edad);
+                dataGridView1.DataSource = db.GetAll().ToList();
 
                 for (int i = 0; i < MAX_AGE; i++)
+                {
                     lEdad.Items.Add(i);
-
+                }
             }
             catch (Exception ex)
             {
@@ -40,12 +40,11 @@ namespace GiDapper
             if (seleccionado == null)
             {
                 this.dataGridView1.ClearSelection();
-                this.dataGridView1.Rows.Clear();
-                Revisiones_Load(null, null);
+                dataGridView1.DataSource = db.GetAll().ToList();
 
-                tNIF.Text = "";
-                tNombre.Text = "";
-                tApellidos.Text = "";
+                tNIF.ResetText();
+                tNombre.ResetText();
+                tApellidos.ResetText();
                 lEdad.ClearSelected();
             }
             else
@@ -63,15 +62,7 @@ namespace GiDapper
             {
                 string NIF = (string)this.dataGridView1.SelectedRows[0].Cells[0].Value;
 
-                try
-                {
-                    Db db = new Db();
-                    seleccionado = db.GetById<Client>(NIF);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("ERROR: " + ex.Message);
-                }
+                seleccionado = db.GetById(NIF);
 
                 MuestraSeleccionado();
             }
@@ -80,7 +71,9 @@ namespace GiDapper
         private void buttonRevisiones_Click(object sender, EventArgs e)
         {
             if (seleccionado == null)
+            {
                 MessageBox.Show("Seleccione un cliente");
+            }
             else
             {
                 Clientes cliente = new Clientes(seleccionado);
@@ -94,16 +87,15 @@ namespace GiDapper
         {
             try
             {
-                if (seleccionado == null)
-                    seleccionado = new Client();
+                var c = new Client
+                {
+                    NIF = tNIF.Text,
+                    Nombre = tNombre.Text,
+                    Apellidos = tApellidos.Text,
+                    Edad = (int)lEdad.SelectedItem,
+                };
 
-                seleccionado.NIF = tNIF.Text;
-                seleccionado.Nombre = tNombre.Text;
-                seleccionado.Apellidos = tApellidos.Text;
-                seleccionado.Edad = (int)lEdad.SelectedItem;
-
-                Db db = new Db();
-                db.Save(seleccionado);
+                db.Create(c);
 
                 seleccionado = null;
                 MuestraSeleccionado();
@@ -118,20 +110,22 @@ namespace GiDapper
         {
             try
             {
+
+                var id = seleccionado.NIF;
                 seleccionado.NIF = tNIF.Text;
                 seleccionado.Nombre = tNombre.Text;
                 seleccionado.Apellidos = tApellidos.Text;
-                seleccionado.Edad = (int) lEdad.SelectedItem;
+                seleccionado.Edad = (int)lEdad.SelectedItem;
 
-                Db db = new Db();
-                db.Update(seleccionado);
+                db.Update(id, seleccionado);
 
                 seleccionado = null;
                 MuestraSeleccionado();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("ERROR: " + ex.Message);
+
+                throw;
             }
         }
 
@@ -139,7 +133,6 @@ namespace GiDapper
         {
             try
             {
-                Db db = new Db();
                 db.Delete(seleccionado);
 
                 seleccionado = null;

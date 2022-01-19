@@ -1,16 +1,10 @@
 ﻿using Dapper.Contrib.Extensions;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GiDapper
 {
-    [Table("tEye")]
     public class Eye
     {
-        [Key]
         public int ID { get; set; }
         public string NIF { get; set; }
         public DateTime Consulta { get; set; }

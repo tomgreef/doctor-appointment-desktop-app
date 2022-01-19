@@ -44,18 +44,15 @@
             this.tApellidos = new System.Windows.Forms.TextBox();
             this.lEdad = new System.Windows.Forms.ListBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.NIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelTitulo
             // 
             this.labelTitulo.AutoSize = true;
-            this.labelTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitulo.Location = new System.Drawing.Point(253, 5);
+            this.labelTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelTitulo.Location = new System.Drawing.Point(295, 6);
+            this.labelTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTitulo.Name = "labelTitulo";
             this.labelTitulo.Size = new System.Drawing.Size(221, 31);
             this.labelTitulo.TabIndex = 0;
@@ -64,44 +61,49 @@
             // labelNIF
             // 
             this.labelNIF.AutoSize = true;
-            this.labelNIF.Location = new System.Drawing.Point(75, 176);
+            this.labelNIF.Location = new System.Drawing.Point(88, 203);
+            this.labelNIF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNIF.Name = "labelNIF";
-            this.labelNIF.Size = new System.Drawing.Size(24, 13);
+            this.labelNIF.Size = new System.Drawing.Size(25, 15);
             this.labelNIF.TabIndex = 2;
             this.labelNIF.Text = "NIF";
             // 
             // labelNombre
             // 
             this.labelNombre.AutoSize = true;
-            this.labelNombre.Location = new System.Drawing.Point(75, 207);
+            this.labelNombre.Location = new System.Drawing.Point(88, 239);
+            this.labelNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(44, 13);
+            this.labelNombre.Size = new System.Drawing.Size(51, 15);
             this.labelNombre.TabIndex = 3;
             this.labelNombre.Text = "Nombre";
             // 
             // labelEdad
             // 
             this.labelEdad.AutoSize = true;
-            this.labelEdad.Location = new System.Drawing.Point(75, 267);
+            this.labelEdad.Location = new System.Drawing.Point(88, 308);
+            this.labelEdad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEdad.Name = "labelEdad";
-            this.labelEdad.Size = new System.Drawing.Size(32, 13);
+            this.labelEdad.Size = new System.Drawing.Size(33, 15);
             this.labelEdad.TabIndex = 4;
             this.labelEdad.Text = "Edad";
             // 
             // labelApellidos
             // 
             this.labelApellidos.AutoSize = true;
-            this.labelApellidos.Location = new System.Drawing.Point(75, 238);
+            this.labelApellidos.Location = new System.Drawing.Point(88, 275);
+            this.labelApellidos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelApellidos.Name = "labelApellidos";
-            this.labelApellidos.Size = new System.Drawing.Size(49, 13);
+            this.labelApellidos.Size = new System.Drawing.Size(56, 15);
             this.labelApellidos.TabIndex = 5;
             this.labelApellidos.Text = "Apellidos";
             // 
             // buttonAñadir
             // 
-            this.buttonAñadir.Location = new System.Drawing.Point(78, 310);
+            this.buttonAñadir.Location = new System.Drawing.Point(91, 358);
+            this.buttonAñadir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonAñadir.Name = "buttonAñadir";
-            this.buttonAñadir.Size = new System.Drawing.Size(75, 23);
+            this.buttonAñadir.Size = new System.Drawing.Size(88, 27);
             this.buttonAñadir.TabIndex = 6;
             this.buttonAñadir.Text = "Añadir";
             this.buttonAñadir.UseVisualStyleBackColor = true;
@@ -109,9 +111,10 @@
             // 
             // buttonActualizar
             // 
-            this.buttonActualizar.Location = new System.Drawing.Point(198, 310);
+            this.buttonActualizar.Location = new System.Drawing.Point(231, 358);
+            this.buttonActualizar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonActualizar.Name = "buttonActualizar";
-            this.buttonActualizar.Size = new System.Drawing.Size(75, 23);
+            this.buttonActualizar.Size = new System.Drawing.Size(88, 27);
             this.buttonActualizar.TabIndex = 7;
             this.buttonActualizar.Text = "Actualizar";
             this.buttonActualizar.UseVisualStyleBackColor = true;
@@ -119,9 +122,10 @@
             // 
             // buttonBorrar
             // 
-            this.buttonBorrar.Location = new System.Drawing.Point(328, 310);
+            this.buttonBorrar.Location = new System.Drawing.Point(383, 358);
+            this.buttonBorrar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonBorrar.Name = "buttonBorrar";
-            this.buttonBorrar.Size = new System.Drawing.Size(75, 23);
+            this.buttonBorrar.Size = new System.Drawing.Size(88, 27);
             this.buttonBorrar.TabIndex = 8;
             this.buttonBorrar.Text = "Borrar";
             this.buttonBorrar.UseVisualStyleBackColor = true;
@@ -129,9 +133,10 @@
             // 
             // buttonLimpiar
             // 
-            this.buttonLimpiar.Location = new System.Drawing.Point(449, 310);
+            this.buttonLimpiar.Location = new System.Drawing.Point(524, 358);
+            this.buttonLimpiar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonLimpiar.Name = "buttonLimpiar";
-            this.buttonLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.buttonLimpiar.Size = new System.Drawing.Size(88, 27);
             this.buttonLimpiar.TabIndex = 9;
             this.buttonLimpiar.Text = "Limpiar";
             this.buttonLimpiar.UseVisualStyleBackColor = true;
@@ -139,9 +144,10 @@
             // 
             // buttonSalir
             // 
-            this.buttonSalir.Location = new System.Drawing.Point(559, 310);
+            this.buttonSalir.Location = new System.Drawing.Point(652, 358);
+            this.buttonSalir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonSalir.Name = "buttonSalir";
-            this.buttonSalir.Size = new System.Drawing.Size(75, 23);
+            this.buttonSalir.Size = new System.Drawing.Size(88, 27);
             this.buttonSalir.TabIndex = 10;
             this.buttonSalir.Text = "Salir";
             this.buttonSalir.UseVisualStyleBackColor = true;
@@ -149,9 +155,10 @@
             // 
             // buttonRevisiones
             // 
-            this.buttonRevisiones.Location = new System.Drawing.Point(510, 269);
+            this.buttonRevisiones.Location = new System.Drawing.Point(595, 310);
+            this.buttonRevisiones.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonRevisiones.Name = "buttonRevisiones";
-            this.buttonRevisiones.Size = new System.Drawing.Size(75, 23);
+            this.buttonRevisiones.Size = new System.Drawing.Size(88, 27);
             this.buttonRevisiones.TabIndex = 11;
             this.buttonRevisiones.Text = "Revisiones";
             this.buttonRevisiones.UseVisualStyleBackColor = true;
@@ -159,31 +166,36 @@
             // 
             // tNIF
             // 
-            this.tNIF.Location = new System.Drawing.Point(144, 173);
+            this.tNIF.Location = new System.Drawing.Point(168, 200);
+            this.tNIF.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tNIF.Name = "tNIF";
-            this.tNIF.Size = new System.Drawing.Size(490, 20);
+            this.tNIF.Size = new System.Drawing.Size(571, 23);
             this.tNIF.TabIndex = 12;
             // 
             // tNombre
             // 
-            this.tNombre.Location = new System.Drawing.Point(144, 207);
+            this.tNombre.Location = new System.Drawing.Point(168, 239);
+            this.tNombre.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tNombre.Name = "tNombre";
-            this.tNombre.Size = new System.Drawing.Size(490, 20);
+            this.tNombre.Size = new System.Drawing.Size(571, 23);
             this.tNombre.TabIndex = 13;
             // 
             // tApellidos
             // 
-            this.tApellidos.Location = new System.Drawing.Point(144, 238);
+            this.tApellidos.Location = new System.Drawing.Point(168, 275);
+            this.tApellidos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tApellidos.Name = "tApellidos";
-            this.tApellidos.Size = new System.Drawing.Size(490, 20);
+            this.tApellidos.Size = new System.Drawing.Size(571, 23);
             this.tApellidos.TabIndex = 14;
             // 
             // lEdad
             // 
             this.lEdad.FormattingEnabled = true;
-            this.lEdad.Location = new System.Drawing.Point(144, 269);
+            this.lEdad.ItemHeight = 15;
+            this.lEdad.Location = new System.Drawing.Point(168, 310);
+            this.lEdad.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lEdad.Name = "lEdad";
-            this.lEdad.Size = new System.Drawing.Size(120, 30);
+            this.lEdad.Size = new System.Drawing.Size(139, 34);
             this.lEdad.TabIndex = 15;
             // 
             // dataGridView1
@@ -192,47 +204,19 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NIF,
-            this.Nombre,
-            this.Apellidos,
-            this.Edad});
-            this.dataGridView1.Location = new System.Drawing.Point(78, 39);
+            this.dataGridView1.Location = new System.Drawing.Point(91, 45);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(556, 128);
+            this.dataGridView1.Size = new System.Drawing.Size(649, 148);
             this.dataGridView1.TabIndex = 16;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
-            // NIF
-            // 
-            this.NIF.HeaderText = "NIF";
-            this.NIF.Name = "NIF";
-            this.NIF.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "NOMBRE";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Apellidos
-            // 
-            this.Apellidos.HeaderText = "APELLIDOS";
-            this.Apellidos.Name = "Apellidos";
-            this.Apellidos.ReadOnly = true;
-            // 
-            // Edad
-            // 
-            this.Edad.HeaderText = "EDAD";
-            this.Edad.Name = "Edad";
-            this.Edad.ReadOnly = true;
-            // 
             // Revisiones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(728, 345);
+            this.ClientSize = new System.Drawing.Size(849, 398);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lEdad);
             this.Controls.Add(this.tApellidos);
@@ -249,6 +233,7 @@
             this.Controls.Add(this.labelNombre);
             this.Controls.Add(this.labelNIF);
             this.Controls.Add(this.labelTitulo);
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Revisiones";
             this.Text = "Revisiones";
             this.Load += new System.EventHandler(this.Revisiones_Load);
@@ -276,9 +261,5 @@
         private System.Windows.Forms.TextBox tApellidos;
         private System.Windows.Forms.ListBox lEdad;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NIF;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Edad;
     }
 }

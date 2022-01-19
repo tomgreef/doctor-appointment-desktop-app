@@ -1,7 +1,8 @@
+using Dapper.FluentMap;
+using Dapper.FluentMap.Dommel;
+using GiDapper.Database;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace GiDapper
@@ -14,6 +15,11 @@ namespace GiDapper
         [STAThread]
         static void Main()
         {
+            FluentMapper.Initialize(c => {
+                c.AddMap(new EyeMap());
+                c.AddMap(new ClientMap());
+                c.ForDommel();
+            });
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
