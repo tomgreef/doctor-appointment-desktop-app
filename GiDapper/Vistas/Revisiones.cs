@@ -8,7 +8,7 @@ namespace GiDapper
     public partial class Revisiones : Form
     {
         private Client seleccionado = null; //hay que completar esto, cuando el usuario selecciona una persona y selecciona revisiones usamos esto para pasar el cliente  
-        private int MAX_AGE = 100;
+        private const int MAX_AGE = 100;
 
         private readonly ClientDb db;
 
@@ -76,7 +76,7 @@ namespace GiDapper
             }
             else
             {
-                Clientes cliente = new Clientes(seleccionado);
+                Clientes cliente = new(seleccionado);
                 this.Visible = false;
                 cliente.ShowDialog();
                 this.Visible = true;
@@ -87,7 +87,7 @@ namespace GiDapper
         {
             try
             {
-                var c = new Client
+                Client c = new()
                 {
                     NIF = tNIF.Text,
                     Nombre = tNombre.Text,
@@ -111,7 +111,7 @@ namespace GiDapper
             try
             {
 
-                var id = seleccionado.NIF;
+                string id = seleccionado.NIF;
                 seleccionado.NIF = tNIF.Text;
                 seleccionado.Nombre = tNombre.Text;
                 seleccionado.Apellidos = tApellidos.Text;
@@ -122,10 +122,10 @@ namespace GiDapper
                 seleccionado = null;
                 MuestraSeleccionado();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show("ERROR: " + ex.Message);
             }
         }
 

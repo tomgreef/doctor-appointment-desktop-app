@@ -11,5 +11,5 @@ namespace GiDapper.Database
                 param: new C(client.NIF, client.Nombre, client.Apellidos, client.Edad, nif)));
     }
 
-    internal record C(string NIF, string Nombre, string Apellidos, int Edad, string id);
+    internal record C(string NIF, string Nombre, string Apellidos, int Edad, string Id);
 }

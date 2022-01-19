@@ -22,10 +22,8 @@ namespace GiDapper
 
         protected void Query(Action<SqlConnection> predicate)
         {
-            using (var connection = new SqlConnection(_connectionString))
-            {
-                predicate(connection);
-            }
+            using var connection = new SqlConnection(_connectionString);
+            predicate(connection);
         }
 
         protected IEnumerable<T> Query(Func<SqlConnection, IEnumerable<T>> predicate)
