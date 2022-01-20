@@ -1,4 +1,4 @@
-﻿namespace GESDAPPER
+﻿namespace GiDapper
 {
     partial class Revisiones
     {
@@ -54,8 +54,9 @@
             // labelTitulo
             // 
             this.labelTitulo.AutoSize = true;
-            this.labelTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitulo.Location = new System.Drawing.Point(253, 5);
+            this.labelTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelTitulo.Location = new System.Drawing.Point(295, 6);
+            this.labelTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTitulo.Name = "labelTitulo";
             this.labelTitulo.Size = new System.Drawing.Size(221, 31);
             this.labelTitulo.TabIndex = 0;
@@ -64,44 +65,49 @@
             // labelNIF
             // 
             this.labelNIF.AutoSize = true;
-            this.labelNIF.Location = new System.Drawing.Point(75, 176);
+            this.labelNIF.Location = new System.Drawing.Point(88, 203);
+            this.labelNIF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNIF.Name = "labelNIF";
-            this.labelNIF.Size = new System.Drawing.Size(24, 13);
+            this.labelNIF.Size = new System.Drawing.Size(25, 15);
             this.labelNIF.TabIndex = 2;
             this.labelNIF.Text = "NIF";
             // 
             // labelNombre
             // 
             this.labelNombre.AutoSize = true;
-            this.labelNombre.Location = new System.Drawing.Point(75, 207);
+            this.labelNombre.Location = new System.Drawing.Point(88, 239);
+            this.labelNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(44, 13);
+            this.labelNombre.Size = new System.Drawing.Size(51, 15);
             this.labelNombre.TabIndex = 3;
             this.labelNombre.Text = "Nombre";
             // 
             // labelEdad
             // 
             this.labelEdad.AutoSize = true;
-            this.labelEdad.Location = new System.Drawing.Point(75, 267);
+            this.labelEdad.Location = new System.Drawing.Point(88, 308);
+            this.labelEdad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEdad.Name = "labelEdad";
-            this.labelEdad.Size = new System.Drawing.Size(32, 13);
+            this.labelEdad.Size = new System.Drawing.Size(33, 15);
             this.labelEdad.TabIndex = 4;
             this.labelEdad.Text = "Edad";
             // 
             // labelApellidos
             // 
             this.labelApellidos.AutoSize = true;
-            this.labelApellidos.Location = new System.Drawing.Point(75, 238);
+            this.labelApellidos.Location = new System.Drawing.Point(88, 275);
+            this.labelApellidos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelApellidos.Name = "labelApellidos";
-            this.labelApellidos.Size = new System.Drawing.Size(49, 13);
+            this.labelApellidos.Size = new System.Drawing.Size(56, 15);
             this.labelApellidos.TabIndex = 5;
             this.labelApellidos.Text = "Apellidos";
             // 
             // buttonAñadir
             // 
-            this.buttonAñadir.Location = new System.Drawing.Point(78, 310);
+            this.buttonAñadir.Location = new System.Drawing.Point(91, 358);
+            this.buttonAñadir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonAñadir.Name = "buttonAñadir";
-            this.buttonAñadir.Size = new System.Drawing.Size(75, 23);
+            this.buttonAñadir.Size = new System.Drawing.Size(88, 27);
             this.buttonAñadir.TabIndex = 6;
             this.buttonAñadir.Text = "Añadir";
             this.buttonAñadir.UseVisualStyleBackColor = true;
@@ -109,9 +115,10 @@
             // 
             // buttonActualizar
             // 
-            this.buttonActualizar.Location = new System.Drawing.Point(198, 310);
+            this.buttonActualizar.Location = new System.Drawing.Point(231, 358);
+            this.buttonActualizar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonActualizar.Name = "buttonActualizar";
-            this.buttonActualizar.Size = new System.Drawing.Size(75, 23);
+            this.buttonActualizar.Size = new System.Drawing.Size(88, 27);
             this.buttonActualizar.TabIndex = 7;
             this.buttonActualizar.Text = "Actualizar";
             this.buttonActualizar.UseVisualStyleBackColor = true;
@@ -119,9 +126,10 @@
             // 
             // buttonBorrar
             // 
-            this.buttonBorrar.Location = new System.Drawing.Point(328, 310);
+            this.buttonBorrar.Location = new System.Drawing.Point(383, 358);
+            this.buttonBorrar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonBorrar.Name = "buttonBorrar";
-            this.buttonBorrar.Size = new System.Drawing.Size(75, 23);
+            this.buttonBorrar.Size = new System.Drawing.Size(88, 27);
             this.buttonBorrar.TabIndex = 8;
             this.buttonBorrar.Text = "Borrar";
             this.buttonBorrar.UseVisualStyleBackColor = true;
@@ -129,9 +137,10 @@
             // 
             // buttonLimpiar
             // 
-            this.buttonLimpiar.Location = new System.Drawing.Point(449, 310);
+            this.buttonLimpiar.Location = new System.Drawing.Point(524, 358);
+            this.buttonLimpiar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonLimpiar.Name = "buttonLimpiar";
-            this.buttonLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.buttonLimpiar.Size = new System.Drawing.Size(88, 27);
             this.buttonLimpiar.TabIndex = 9;
             this.buttonLimpiar.Text = "Limpiar";
             this.buttonLimpiar.UseVisualStyleBackColor = true;
@@ -139,9 +148,10 @@
             // 
             // buttonSalir
             // 
-            this.buttonSalir.Location = new System.Drawing.Point(559, 310);
+            this.buttonSalir.Location = new System.Drawing.Point(652, 358);
+            this.buttonSalir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonSalir.Name = "buttonSalir";
-            this.buttonSalir.Size = new System.Drawing.Size(75, 23);
+            this.buttonSalir.Size = new System.Drawing.Size(88, 27);
             this.buttonSalir.TabIndex = 10;
             this.buttonSalir.Text = "Salir";
             this.buttonSalir.UseVisualStyleBackColor = true;
@@ -149,9 +159,10 @@
             // 
             // buttonRevisiones
             // 
-            this.buttonRevisiones.Location = new System.Drawing.Point(510, 269);
+            this.buttonRevisiones.Location = new System.Drawing.Point(595, 310);
+            this.buttonRevisiones.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonRevisiones.Name = "buttonRevisiones";
-            this.buttonRevisiones.Size = new System.Drawing.Size(75, 23);
+            this.buttonRevisiones.Size = new System.Drawing.Size(88, 27);
             this.buttonRevisiones.TabIndex = 11;
             this.buttonRevisiones.Text = "Revisiones";
             this.buttonRevisiones.UseVisualStyleBackColor = true;
@@ -230,7 +241,7 @@
             // 
             // Revisiones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(728, 345);
             this.Controls.Add(this.dataGridView1);
@@ -249,6 +260,7 @@
             this.Controls.Add(this.labelNombre);
             this.Controls.Add(this.labelNIF);
             this.Controls.Add(this.labelTitulo);
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Revisiones";
             this.Text = "Revisiones";
             this.Load += new System.EventHandler(this.Revisiones_Load);

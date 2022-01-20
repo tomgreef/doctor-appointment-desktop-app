@@ -1,20 +1,13 @@
 ﻿using Dapper.Contrib.Extensions;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace GESDAPPER
+namespace GiDapper
 {
-    [Table("tEye")]
-    class Eye
+    public class Eye
     {
-        [Key]
-        public int? ID { get; set; }
-
-        public Client Cliente { get; set; }
-        public string Consulta { get; set; }
+        public int ID { get; set; }
+        public string NIF { get; set; }
+        public DateTime Consulta { get; set; }
         public double OdEsfera { get; set; }
         public double OdCilindro { get; set; }
         public double OdAdicion { get; set; }
