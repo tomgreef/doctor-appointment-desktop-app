@@ -1,73 +1,147 @@
 ﻿using GiDapper.Database;
 using System;
+using System.Linq;
 using System.Windows.Forms;
-
 
 namespace GiDapper
 {
     public partial class Clientes : Form
     {
-        private Eye seleccionado;
-        private readonly Client client;
-        private readonly EyeDb db;
-        
-        public Clientes(Client client)
+        private Client seleccionado = null;
+        private const int MAX_AGE = 130;
+
+        private readonly ClientDb db;
+
+        public Clientes()
         {
             InitializeComponent();
-            this.client = client;
-            db = new EyeDb();
+            db = new ClientDb();
         }
 
-
-        private void Clientes_Load(object sender, EventArgs e)
+        private void Revisiones_Load(object sender, EventArgs e)
         {
-            dataGridViewClientes.DataSource = db.GetByNif(client.NIF);
-        }
-
-        private void dataGridViewClientes_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dataGridViewClientes.SelectedRows.Count > 0)
+            try
             {
-                string id = dataGridViewClientes.SelectedRows[0].Cells[0].Value.ToString();
-                seleccionado = db.GetById(id);
-                MostrarSeleccionado();
+                dataGridView1.DataSource = db.GetAll().ToList();
+
+                for (int i = 0; i < MAX_AGE; i++)
+                {
+                    lEdad.Items.Add(i);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message);
             }
         }
 
-        private void MostrarSeleccionado()
+        private void MuestraSeleccionado()
         {
             if (seleccionado == null)
             {
-                dataGridViewClientes.ClearSelection();
-                dataGridViewClientes.DataSource = db.GetByNif(client.NIF);
-                textBox_od_espera.Text = "";
-                textBox_oi_espera.Text = "";
-                textBox_od_cilindro.Text = "";
-                textBox_oi_cilindro.Text = "";
-                textBox_od_adicion.Text = "";
-                textBox_oi_adicion.Text = "";
-                textBox_od_agudeza.Text = "";
-                textBox_oi_agudeza.Text = "";
-                monthCalendar.SetDate(DateTime.Today);
+                this.dataGridView1.ClearSelection();
+                dataGridView1.DataSource = db.GetAll().ToList();
+
+                tNIF.ResetText();
+                tNombre.ResetText();
+                tApellidos.ResetText();
+                lEdad.ClearSelected();
             }
             else
             {
-                textBox_od_espera.Text = seleccionado.OdEsfera.ToString();
-                textBox_oi_espera.Text = seleccionado.OiEsfera.ToString();
-                textBox_od_cilindro.Text = seleccionado.OdCilindro.ToString();
-                textBox_oi_cilindro.Text = seleccionado.OiCilindro.ToString();
-                textBox_od_adicion.Text = seleccionado.OdAdicion.ToString();
-                textBox_oi_adicion.Text = seleccionado.OiAdicion.ToString();
-                textBox_od_agudeza.Text = seleccionado.OdAgudeza.ToString();
-                textBox_oi_agudeza.Text = seleccionado.OiAgudeza.ToString();
-                monthCalendar.SetDate(seleccionado.Consulta);
+                tNIF.Text = seleccionado.Nif;
+                tNombre.Text = seleccionado.Nombre;
+                tApellidos.Text = seleccionado.Apellidos;
+                lEdad.SelectedItem = (int)seleccionado.Edad;
             }
         }
 
-        private void buttonLimpiar_Click(object sender, EventArgs e)
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            seleccionado = null;
-            MostrarSeleccionado();
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                string NIF = (string)this.dataGridView1.SelectedRows[0].Cells[0].Value;
+
+                seleccionado = db.GetById(NIF);
+
+                MuestraSeleccionado();
+            }
+        }
+
+        private void buttonRevisiones_Click(object sender, EventArgs e)
+        {
+            if (seleccionado == null)
+            {
+                MessageBox.Show("Seleccione un cliente");
+            }
+            else
+            {
+                Revisiones cliente = new(seleccionado);
+                this.Visible = false;
+                cliente.ShowDialog();
+                this.Visible = true;
+            }
+        }
+
+        private void bIns_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Client c = new()
+                {
+                    Nif = tNIF.Text,
+                    Nombre = tNombre.Text,
+                    Apellidos = tApellidos.Text,
+                    Edad = (int)lEdad.SelectedItem,
+                };
+
+                db.Create(c);
+
+                seleccionado = null;
+                MuestraSeleccionado();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message);
+            }
+        }
+
+        private void bUpd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                string id = seleccionado.Nif;
+                seleccionado.Nif = tNIF.Text;
+                seleccionado.Nombre = tNombre.Text;
+                seleccionado.Apellidos = tApellidos.Text;
+                seleccionado.Edad = (int)lEdad.SelectedItem;
+
+                db.Update(id, seleccionado);
+
+                seleccionado = null;
+                MuestraSeleccionado();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("ERROR: " + ex.Message);
+            }
+        }
+
+        private void bDel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                db.Delete(seleccionado);
+
+                seleccionado = null;
+                MuestraSeleccionado();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message);
+            }
         }
 
         private void buttonSalir_Click(object sender, EventArgs e)
@@ -75,51 +149,11 @@ namespace GiDapper
             this.Close();
         }
 
-        private void buttonBorrar_Click(object sender, EventArgs e)
+        private void buttonLimpiar_Click(object sender, EventArgs e)
         {
-            if (seleccionado != null)
-            {
-                db.Delete(seleccionado);
-                seleccionado = null;
-                MostrarSeleccionado();
-            }
+            seleccionado = null;
+            MuestraSeleccionado();
         }
 
-        private void buttonAñadir_Click(object sender, EventArgs e)
-        {
-            var eye = new Eye
-            {
-                NIF = client.NIF,
-                Consulta = monthCalendar.SelectionRange.Start,
-                OdEsfera = Convert.ToDouble(textBox_od_espera.Text),
-                OiEsfera = Convert.ToDouble(textBox_oi_espera.Text),
-                OdCilindro = Convert.ToDouble(textBox_od_cilindro.Text),
-                OiCilindro = Convert.ToDouble(textBox_oi_cilindro.Text),
-                OdAgudeza = Convert.ToDouble(textBox_od_agudeza.Text),
-                OiAgudeza = Convert.ToDouble(textBox_oi_agudeza.Text),
-                OdAdicion = Convert.ToDouble(textBox_od_adicion.Text),
-                OiAdicion = Convert.ToDouble(textBox_oi_adicion.Text)
-            };
-            db.Create(eye);
-            seleccionado = null;
-            MostrarSeleccionado();
-        }
-
-        private void buttonActualizar_Click(object sender, EventArgs e)
-        {
-            seleccionado.OdEsfera = Convert.ToDouble(textBox_od_espera.Text);
-            seleccionado.OiEsfera = Convert.ToDouble(textBox_oi_espera.Text);
-            seleccionado.OdCilindro = Convert.ToDouble(textBox_od_cilindro.Text);
-            seleccionado.OiCilindro = Convert.ToDouble(textBox_oi_cilindro.Text);
-            seleccionado.OdAgudeza = Convert.ToDouble(textBox_od_agudeza.Text);
-            seleccionado.OiAgudeza = Convert.ToDouble(textBox_oi_agudeza.Text);
-            seleccionado.OdAdicion = Convert.ToDouble(textBox_od_adicion.Text);
-            seleccionado.OiAdicion = Convert.ToDouble(textBox_oi_adicion.Text);
-            seleccionado.Consulta = monthCalendar.SelectionRange.Start;
-            
-            db.Update(seleccionado);
-            seleccionado = null;
-            MostrarSeleccionado();
-        }
     }
 }

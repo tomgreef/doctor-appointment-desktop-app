@@ -28,243 +28,302 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelTitulo = new System.Windows.Forms.Label();
-            this.labelNIF = new System.Windows.Forms.Label();
-            this.labelNombre = new System.Windows.Forms.Label();
-            this.labelEdad = new System.Windows.Forms.Label();
-            this.labelApellidos = new System.Windows.Forms.Label();
+            this.lCliente = new System.Windows.Forms.Label();
+            this.label_od_espera = new System.Windows.Forms.Label();
+            this.label_od_cilindro = new System.Windows.Forms.Label();
+            this.label_od_adicion = new System.Windows.Forms.Label();
+            this.label_od_agudeza = new System.Windows.Forms.Label();
+            this.label_oi_agudeza = new System.Windows.Forms.Label();
+            this.label_oi_adicion = new System.Windows.Forms.Label();
+            this.label_oi_cilindro = new System.Windows.Forms.Label();
+            this.label_oi_esfera = new System.Windows.Forms.Label();
+            this.textBox_oi_espera = new System.Windows.Forms.TextBox();
+            this.textBox_oi_cilindro = new System.Windows.Forms.TextBox();
+            this.textBox_oi_adicion = new System.Windows.Forms.TextBox();
+            this.textBox_oi_agudeza = new System.Windows.Forms.TextBox();
+            this.textBox_od_agudeza = new System.Windows.Forms.TextBox();
+            this.textBox_od_adicion = new System.Windows.Forms.TextBox();
+            this.textBox_od_cilindro = new System.Windows.Forms.TextBox();
+            this.textBox_od_espera = new System.Windows.Forms.TextBox();
+            this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             this.buttonAñadir = new System.Windows.Forms.Button();
             this.buttonActualizar = new System.Windows.Forms.Button();
             this.buttonBorrar = new System.Windows.Forms.Button();
             this.buttonLimpiar = new System.Windows.Forms.Button();
             this.buttonSalir = new System.Windows.Forms.Button();
-            this.buttonRevisiones = new System.Windows.Forms.Button();
-            this.tNIF = new System.Windows.Forms.TextBox();
-            this.tNombre = new System.Windows.Forms.TextBox();
-            this.tApellidos = new System.Windows.Forms.TextBox();
-            this.lEdad = new System.Windows.Forms.ListBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.NIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridViewClientes = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
             this.SuspendLayout();
             // 
-            // labelTitulo
+            // lCliente
             // 
-            this.labelTitulo.AutoSize = true;
-            this.labelTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelTitulo.Location = new System.Drawing.Point(295, 6);
-            this.labelTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelTitulo.Name = "labelTitulo";
-            this.labelTitulo.Size = new System.Drawing.Size(221, 31);
-            this.labelTitulo.TabIndex = 0;
-            this.labelTitulo.Text = "Revisión Ocular";
+            this.lCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lCliente.AutoSize = true;
+            this.lCliente.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lCliente.Location = new System.Drawing.Point(182, 26);
+            this.lCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lCliente.Name = "lCliente";
+            this.lCliente.Size = new System.Drawing.Size(481, 37);
+            this.lCliente.TabIndex = 0;
+            this.lCliente.Text = "111111111A;Nombre1;Apellido1;21";
+            this.lCliente.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // labelNIF
+            // label_od_espera
             // 
-            this.labelNIF.AutoSize = true;
-            this.labelNIF.Location = new System.Drawing.Point(88, 203);
-            this.labelNIF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelNIF.Name = "labelNIF";
-            this.labelNIF.Size = new System.Drawing.Size(25, 15);
-            this.labelNIF.TabIndex = 2;
-            this.labelNIF.Text = "NIF";
+            this.label_od_espera.AutoSize = true;
+            this.label_od_espera.Location = new System.Drawing.Point(50, 250);
+            this.label_od_espera.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_od_espera.Name = "label_od_espera";
+            this.label_od_espera.Size = new System.Drawing.Size(69, 15);
+            this.label_od_espera.TabIndex = 1;
+            this.label_od_espera.Text = "OD_ESPERA";
             // 
-            // labelNombre
+            // label_od_cilindro
             // 
-            this.labelNombre.AutoSize = true;
-            this.labelNombre.Location = new System.Drawing.Point(88, 239);
-            this.labelNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(51, 15);
-            this.labelNombre.TabIndex = 3;
-            this.labelNombre.Text = "Nombre";
+            this.label_od_cilindro.AutoSize = true;
+            this.label_od_cilindro.Location = new System.Drawing.Point(50, 287);
+            this.label_od_cilindro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_od_cilindro.Name = "label_od_cilindro";
+            this.label_od_cilindro.Size = new System.Drawing.Size(82, 15);
+            this.label_od_cilindro.TabIndex = 2;
+            this.label_od_cilindro.Text = "OD_CILINDRO";
             // 
-            // labelEdad
+            // label_od_adicion
             // 
-            this.labelEdad.AutoSize = true;
-            this.labelEdad.Location = new System.Drawing.Point(88, 308);
-            this.labelEdad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelEdad.Name = "labelEdad";
-            this.labelEdad.Size = new System.Drawing.Size(33, 15);
-            this.labelEdad.TabIndex = 4;
-            this.labelEdad.Text = "Edad";
+            this.label_od_adicion.AutoSize = true;
+            this.label_od_adicion.Location = new System.Drawing.Point(50, 325);
+            this.label_od_adicion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_od_adicion.Name = "label_od_adicion";
+            this.label_od_adicion.Size = new System.Drawing.Size(77, 15);
+            this.label_od_adicion.TabIndex = 3;
+            this.label_od_adicion.Text = "OD_ADICION";
             // 
-            // labelApellidos
+            // label_od_agudeza
             // 
-            this.labelApellidos.AutoSize = true;
-            this.labelApellidos.Location = new System.Drawing.Point(88, 275);
-            this.labelApellidos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelApellidos.Name = "labelApellidos";
-            this.labelApellidos.Size = new System.Drawing.Size(56, 15);
-            this.labelApellidos.TabIndex = 5;
-            this.labelApellidos.Text = "Apellidos";
+            this.label_od_agudeza.AutoSize = true;
+            this.label_od_agudeza.Location = new System.Drawing.Point(50, 361);
+            this.label_od_agudeza.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_od_agudeza.Name = "label_od_agudeza";
+            this.label_od_agudeza.Size = new System.Drawing.Size(82, 15);
+            this.label_od_agudeza.TabIndex = 4;
+            this.label_od_agudeza.Text = "OD_AGUDEZA";
+            // 
+            // label_oi_agudeza
+            // 
+            this.label_oi_agudeza.AutoSize = true;
+            this.label_oi_agudeza.Location = new System.Drawing.Point(446, 361);
+            this.label_oi_agudeza.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_oi_agudeza.Name = "label_oi_agudeza";
+            this.label_oi_agudeza.Size = new System.Drawing.Size(77, 15);
+            this.label_oi_agudeza.TabIndex = 8;
+            this.label_oi_agudeza.Text = "OI_AGUDEZA";
+            // 
+            // label_oi_adicion
+            // 
+            this.label_oi_adicion.AutoSize = true;
+            this.label_oi_adicion.Location = new System.Drawing.Point(446, 325);
+            this.label_oi_adicion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_oi_adicion.Name = "label_oi_adicion";
+            this.label_oi_adicion.Size = new System.Drawing.Size(72, 15);
+            this.label_oi_adicion.TabIndex = 7;
+            this.label_oi_adicion.Text = "OI_ADICION";
+            // 
+            // label_oi_cilindro
+            // 
+            this.label_oi_cilindro.AutoSize = true;
+            this.label_oi_cilindro.Location = new System.Drawing.Point(446, 287);
+            this.label_oi_cilindro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_oi_cilindro.Name = "label_oi_cilindro";
+            this.label_oi_cilindro.Size = new System.Drawing.Size(77, 15);
+            this.label_oi_cilindro.TabIndex = 6;
+            this.label_oi_cilindro.Text = "OI_CILINDRO";
+            // 
+            // label_oi_esfera
+            // 
+            this.label_oi_esfera.AutoSize = true;
+            this.label_oi_esfera.Location = new System.Drawing.Point(446, 250);
+            this.label_oi_esfera.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_oi_esfera.Name = "label_oi_esfera";
+            this.label_oi_esfera.Size = new System.Drawing.Size(64, 15);
+            this.label_oi_esfera.TabIndex = 5;
+            this.label_oi_esfera.Text = "OI_ESPERA";
+            // 
+            // textBox_oi_espera
+            // 
+            this.textBox_oi_espera.Location = new System.Drawing.Point(573, 247);
+            this.textBox_oi_espera.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox_oi_espera.Name = "textBox_oi_espera";
+            this.textBox_oi_espera.Size = new System.Drawing.Size(196, 23);
+            this.textBox_oi_espera.TabIndex = 9;
+            // 
+            // textBox_oi_cilindro
+            // 
+            this.textBox_oi_cilindro.Location = new System.Drawing.Point(573, 283);
+            this.textBox_oi_cilindro.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox_oi_cilindro.Name = "textBox_oi_cilindro";
+            this.textBox_oi_cilindro.Size = new System.Drawing.Size(196, 23);
+            this.textBox_oi_cilindro.TabIndex = 10;
+            // 
+            // textBox_oi_adicion
+            // 
+            this.textBox_oi_adicion.Location = new System.Drawing.Point(573, 317);
+            this.textBox_oi_adicion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox_oi_adicion.Name = "textBox_oi_adicion";
+            this.textBox_oi_adicion.Size = new System.Drawing.Size(196, 23);
+            this.textBox_oi_adicion.TabIndex = 11;
+            // 
+            // textBox_oi_agudeza
+            // 
+            this.textBox_oi_agudeza.Location = new System.Drawing.Point(573, 353);
+            this.textBox_oi_agudeza.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox_oi_agudeza.Name = "textBox_oi_agudeza";
+            this.textBox_oi_agudeza.Size = new System.Drawing.Size(196, 23);
+            this.textBox_oi_agudeza.TabIndex = 12;
+            // 
+            // textBox_od_agudeza
+            // 
+            this.textBox_od_agudeza.Location = new System.Drawing.Point(172, 353);
+            this.textBox_od_agudeza.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox_od_agudeza.Name = "textBox_od_agudeza";
+            this.textBox_od_agudeza.Size = new System.Drawing.Size(204, 23);
+            this.textBox_od_agudeza.TabIndex = 16;
+            // 
+            // textBox_od_adicion
+            // 
+            this.textBox_od_adicion.Location = new System.Drawing.Point(172, 317);
+            this.textBox_od_adicion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox_od_adicion.Name = "textBox_od_adicion";
+            this.textBox_od_adicion.Size = new System.Drawing.Size(204, 23);
+            this.textBox_od_adicion.TabIndex = 15;
+            // 
+            // textBox_od_cilindro
+            // 
+            this.textBox_od_cilindro.Location = new System.Drawing.Point(172, 283);
+            this.textBox_od_cilindro.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox_od_cilindro.Name = "textBox_od_cilindro";
+            this.textBox_od_cilindro.Size = new System.Drawing.Size(204, 23);
+            this.textBox_od_cilindro.TabIndex = 14;
+            // 
+            // textBox_od_espera
+            // 
+            this.textBox_od_espera.Location = new System.Drawing.Point(172, 247);
+            this.textBox_od_espera.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox_od_espera.Name = "textBox_od_espera";
+            this.textBox_od_espera.Size = new System.Drawing.Size(204, 23);
+            this.textBox_od_espera.TabIndex = 13;
+            // 
+            // monthCalendar
+            // 
+            this.monthCalendar.Location = new System.Drawing.Point(125, 389);
+            this.monthCalendar.Margin = new System.Windows.Forms.Padding(10);
+            this.monthCalendar.MaxSelectionCount = 1;
+            this.monthCalendar.Name = "monthCalendar";
+            this.monthCalendar.TabIndex = 17;
             // 
             // buttonAñadir
             // 
-            this.buttonAñadir.Location = new System.Drawing.Point(91, 358);
+            this.buttonAñadir.Location = new System.Drawing.Point(381, 437);
             this.buttonAñadir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonAñadir.Name = "buttonAñadir";
             this.buttonAñadir.Size = new System.Drawing.Size(88, 27);
-            this.buttonAñadir.TabIndex = 6;
+            this.buttonAñadir.TabIndex = 18;
             this.buttonAñadir.Text = "Añadir";
             this.buttonAñadir.UseVisualStyleBackColor = true;
-            this.buttonAñadir.Click += new System.EventHandler(this.bIns_Click);
+            this.buttonAñadir.Click += new System.EventHandler(this.buttonAñadir_Click);
             // 
             // buttonActualizar
             // 
-            this.buttonActualizar.Location = new System.Drawing.Point(231, 358);
+            this.buttonActualizar.Location = new System.Drawing.Point(555, 437);
             this.buttonActualizar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonActualizar.Name = "buttonActualizar";
             this.buttonActualizar.Size = new System.Drawing.Size(88, 27);
-            this.buttonActualizar.TabIndex = 7;
+            this.buttonActualizar.TabIndex = 19;
             this.buttonActualizar.Text = "Actualizar";
             this.buttonActualizar.UseVisualStyleBackColor = true;
-            this.buttonActualizar.Click += new System.EventHandler(this.bUpd_Click);
+            this.buttonActualizar.Click += new System.EventHandler(this.buttonActualizar_Click);
             // 
             // buttonBorrar
             // 
-            this.buttonBorrar.Location = new System.Drawing.Point(383, 358);
+            this.buttonBorrar.Location = new System.Drawing.Point(728, 437);
             this.buttonBorrar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonBorrar.Name = "buttonBorrar";
             this.buttonBorrar.Size = new System.Drawing.Size(88, 27);
-            this.buttonBorrar.TabIndex = 8;
+            this.buttonBorrar.TabIndex = 20;
             this.buttonBorrar.Text = "Borrar";
             this.buttonBorrar.UseVisualStyleBackColor = true;
-            this.buttonBorrar.Click += new System.EventHandler(this.bDel_Click);
+            this.buttonBorrar.Click += new System.EventHandler(this.buttonBorrar_Click);
             // 
             // buttonLimpiar
             // 
-            this.buttonLimpiar.Location = new System.Drawing.Point(524, 358);
+            this.buttonLimpiar.Location = new System.Drawing.Point(466, 487);
             this.buttonLimpiar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonLimpiar.Name = "buttonLimpiar";
             this.buttonLimpiar.Size = new System.Drawing.Size(88, 27);
-            this.buttonLimpiar.TabIndex = 9;
+            this.buttonLimpiar.TabIndex = 21;
             this.buttonLimpiar.Text = "Limpiar";
             this.buttonLimpiar.UseVisualStyleBackColor = true;
             this.buttonLimpiar.Click += new System.EventHandler(this.buttonLimpiar_Click);
             // 
             // buttonSalir
             // 
-            this.buttonSalir.Location = new System.Drawing.Point(652, 358);
+            this.buttonSalir.Location = new System.Drawing.Point(644, 487);
             this.buttonSalir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonSalir.Name = "buttonSalir";
             this.buttonSalir.Size = new System.Drawing.Size(88, 27);
-            this.buttonSalir.TabIndex = 10;
+            this.buttonSalir.TabIndex = 22;
             this.buttonSalir.Text = "Salir";
             this.buttonSalir.UseVisualStyleBackColor = true;
             this.buttonSalir.Click += new System.EventHandler(this.buttonSalir_Click);
             // 
-            // buttonRevisiones
+            // dataGridViewClientes
             // 
-            this.buttonRevisiones.Location = new System.Drawing.Point(595, 310);
-            this.buttonRevisiones.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonRevisiones.Name = "buttonRevisiones";
-            this.buttonRevisiones.Size = new System.Drawing.Size(88, 27);
-            this.buttonRevisiones.TabIndex = 11;
-            this.buttonRevisiones.Text = "Revisiones";
-            this.buttonRevisiones.UseVisualStyleBackColor = true;
-            this.buttonRevisiones.Click += new System.EventHandler(this.buttonRevisiones_Click);
-            // 
-            // tNIF
-            // 
-            this.tNIF.Location = new System.Drawing.Point(144, 173);
-            this.tNIF.Name = "tNIF";
-            this.tNIF.Size = new System.Drawing.Size(490, 20);
-            this.tNIF.TabIndex = 12;
-            // 
-            // tNombre
-            // 
-            this.tNombre.Location = new System.Drawing.Point(144, 207);
-            this.tNombre.Name = "tNombre";
-            this.tNombre.Size = new System.Drawing.Size(490, 20);
-            this.tNombre.TabIndex = 13;
-            // 
-            // tApellidos
-            // 
-            this.tApellidos.Location = new System.Drawing.Point(144, 238);
-            this.tApellidos.Name = "tApellidos";
-            this.tApellidos.Size = new System.Drawing.Size(490, 20);
-            this.tApellidos.TabIndex = 14;
-            // 
-            // lEdad
-            // 
-            this.lEdad.FormattingEnabled = true;
-            this.lEdad.Location = new System.Drawing.Point(144, 269);
-            this.lEdad.Name = "lEdad";
-            this.lEdad.Size = new System.Drawing.Size(120, 30);
-            this.lEdad.TabIndex = 15;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NIF,
-            this.Nombre,
-            this.Apellidos,
-            this.Edad});
-            this.dataGridView1.Location = new System.Drawing.Point(78, 39);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(556, 128);
-            this.dataGridView1.TabIndex = 16;
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
-            // 
-            // NIF
-            // 
-            this.NIF.HeaderText = "NIF";
-            this.NIF.Name = "NIF";
-            this.NIF.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "NOMBRE";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Apellidos
-            // 
-            this.Apellidos.HeaderText = "APELLIDOS";
-            this.Apellidos.Name = "Apellidos";
-            this.Apellidos.ReadOnly = true;
-            // 
-            // Edad
-            // 
-            this.Edad.HeaderText = "EDAD";
-            this.Edad.Name = "Edad";
-            this.Edad.ReadOnly = true;
+            this.dataGridViewClientes.AllowUserToAddRows = false;
+            this.dataGridViewClientes.AllowUserToDeleteRows = false;
+            this.dataGridViewClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewClientes.Location = new System.Drawing.Point(13, 92);
+            this.dataGridViewClientes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dataGridViewClientes.Name = "dataGridViewClientes";
+            this.dataGridViewClientes.ReadOnly = true;
+            this.dataGridViewClientes.Size = new System.Drawing.Size(814, 126);
+            this.dataGridViewClientes.TabIndex = 23;
+            this.dataGridViewClientes.SelectionChanged += new System.EventHandler(this.dataGridViewClientes_SelectionChanged);
             // 
             // Revisiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(728, 345);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.lEdad);
-            this.Controls.Add(this.tApellidos);
-            this.Controls.Add(this.tNombre);
-            this.Controls.Add(this.tNIF);
-            this.Controls.Add(this.buttonRevisiones);
+            this.ClientSize = new System.Drawing.Size(849, 564);
+            this.Controls.Add(this.dataGridViewClientes);
             this.Controls.Add(this.buttonSalir);
             this.Controls.Add(this.buttonLimpiar);
             this.Controls.Add(this.buttonBorrar);
             this.Controls.Add(this.buttonActualizar);
             this.Controls.Add(this.buttonAñadir);
-            this.Controls.Add(this.labelApellidos);
-            this.Controls.Add(this.labelEdad);
-            this.Controls.Add(this.labelNombre);
-            this.Controls.Add(this.labelNIF);
-            this.Controls.Add(this.labelTitulo);
+            this.Controls.Add(this.monthCalendar);
+            this.Controls.Add(this.textBox_od_agudeza);
+            this.Controls.Add(this.textBox_od_adicion);
+            this.Controls.Add(this.textBox_od_cilindro);
+            this.Controls.Add(this.textBox_od_espera);
+            this.Controls.Add(this.textBox_oi_agudeza);
+            this.Controls.Add(this.textBox_oi_adicion);
+            this.Controls.Add(this.textBox_oi_cilindro);
+            this.Controls.Add(this.textBox_oi_espera);
+            this.Controls.Add(this.label_oi_agudeza);
+            this.Controls.Add(this.label_oi_adicion);
+            this.Controls.Add(this.label_oi_cilindro);
+            this.Controls.Add(this.label_oi_esfera);
+            this.Controls.Add(this.label_od_agudeza);
+            this.Controls.Add(this.label_od_adicion);
+            this.Controls.Add(this.label_od_cilindro);
+            this.Controls.Add(this.label_od_espera);
+            this.Controls.Add(this.lCliente);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Revisiones";
-            this.Text = "Revisiones";
-            this.Load += new System.EventHandler(this.Revisiones_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Text = "Clientes";
+            this.Load += new System.EventHandler(this.Clientes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,25 +331,29 @@
 
         #endregion
 
-        private System.Windows.Forms.Label labelTitulo;
-        private System.Windows.Forms.Label labelNIF;
-        private System.Windows.Forms.Label labelNombre;
-        private System.Windows.Forms.Label labelEdad;
-        private System.Windows.Forms.Label labelApellidos;
+        private System.Windows.Forms.Label lCliente;
+        private System.Windows.Forms.Label label_od_espera;
+        private System.Windows.Forms.Label label_od_cilindro;
+        private System.Windows.Forms.Label label_od_adicion;
+        private System.Windows.Forms.Label label_od_agudeza;
+        private System.Windows.Forms.Label label_oi_agudeza;
+        private System.Windows.Forms.Label label_oi_adicion;
+        private System.Windows.Forms.Label label_oi_cilindro;
+        private System.Windows.Forms.Label label_oi_esfera;
+        private System.Windows.Forms.TextBox textBox_oi_espera;
+        private System.Windows.Forms.TextBox textBox_oi_cilindro;
+        private System.Windows.Forms.TextBox textBox_oi_adicion;
+        private System.Windows.Forms.TextBox textBox_oi_agudeza;
+        private System.Windows.Forms.TextBox textBox_od_agudeza;
+        private System.Windows.Forms.TextBox textBox_od_adicion;
+        private System.Windows.Forms.TextBox textBox_od_cilindro;
+        private System.Windows.Forms.TextBox textBox_od_espera;
+        private System.Windows.Forms.MonthCalendar monthCalendar;
         private System.Windows.Forms.Button buttonAñadir;
         private System.Windows.Forms.Button buttonActualizar;
         private System.Windows.Forms.Button buttonBorrar;
         private System.Windows.Forms.Button buttonLimpiar;
         private System.Windows.Forms.Button buttonSalir;
-        private System.Windows.Forms.Button buttonRevisiones;
-        private System.Windows.Forms.TextBox tNIF;
-        private System.Windows.Forms.TextBox tNombre;
-        private System.Windows.Forms.TextBox tApellidos;
-        private System.Windows.Forms.ListBox lEdad;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NIF;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Edad;
+        private System.Windows.Forms.DataGridView dataGridViewClientes;
     }
 }
