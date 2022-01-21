@@ -49,7 +49,7 @@ namespace GiDapper
             }
             else
             {
-                tNIF.Text = seleccionado.NIF;
+                tNIF.Text = seleccionado.Nif;
                 tNombre.Text = seleccionado.Nombre;
                 tApellidos.Text = seleccionado.Apellidos;
                 lEdad.SelectedItem = (int)seleccionado.Edad;
@@ -89,7 +89,7 @@ namespace GiDapper
             {
                 Client c = new()
                 {
-                    NIF = tNIF.Text,
+                    Nif = tNIF.Text,
                     Nombre = tNombre.Text,
                     Apellidos = tApellidos.Text,
                     Edad = (int)lEdad.SelectedItem,
@@ -111,8 +111,8 @@ namespace GiDapper
             try
             {
 
-                string id = seleccionado.NIF;
-                seleccionado.NIF = tNIF.Text;
+                string id = seleccionado.Nif;
+                seleccionado.Nif = tNIF.Text;
                 seleccionado.Nombre = tNombre.Text;
                 seleccionado.Apellidos = tApellidos.Text;
                 seleccionado.Edad = (int)lEdad.SelectedItem;

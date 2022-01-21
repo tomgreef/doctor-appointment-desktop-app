@@ -51,7 +51,7 @@
             // 
             this.labelTitulo.AutoSize = true;
             this.labelTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelTitulo.Location = new System.Drawing.Point(295, 6);
+            this.labelTitulo.Location = new System.Drawing.Point(295, 9);
             this.labelTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTitulo.Name = "labelTitulo";
             this.labelTitulo.Size = new System.Drawing.Size(221, 31);
@@ -61,7 +61,7 @@
             // labelNIF
             // 
             this.labelNIF.AutoSize = true;
-            this.labelNIF.Location = new System.Drawing.Point(88, 203);
+            this.labelNIF.Location = new System.Drawing.Point(86, 263);
             this.labelNIF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNIF.Name = "labelNIF";
             this.labelNIF.Size = new System.Drawing.Size(25, 15);
@@ -71,7 +71,7 @@
             // labelNombre
             // 
             this.labelNombre.AutoSize = true;
-            this.labelNombre.Location = new System.Drawing.Point(88, 239);
+            this.labelNombre.Location = new System.Drawing.Point(86, 299);
             this.labelNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(51, 15);
@@ -81,7 +81,7 @@
             // labelEdad
             // 
             this.labelEdad.AutoSize = true;
-            this.labelEdad.Location = new System.Drawing.Point(88, 308);
+            this.labelEdad.Location = new System.Drawing.Point(86, 368);
             this.labelEdad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEdad.Name = "labelEdad";
             this.labelEdad.Size = new System.Drawing.Size(33, 15);
@@ -91,7 +91,7 @@
             // labelApellidos
             // 
             this.labelApellidos.AutoSize = true;
-            this.labelApellidos.Location = new System.Drawing.Point(88, 275);
+            this.labelApellidos.Location = new System.Drawing.Point(86, 335);
             this.labelApellidos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelApellidos.Name = "labelApellidos";
             this.labelApellidos.Size = new System.Drawing.Size(56, 15);
@@ -100,7 +100,7 @@
             // 
             // buttonAñadir
             // 
-            this.buttonAñadir.Location = new System.Drawing.Point(91, 358);
+            this.buttonAñadir.Location = new System.Drawing.Point(88, 462);
             this.buttonAñadir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonAñadir.Name = "buttonAñadir";
             this.buttonAñadir.Size = new System.Drawing.Size(88, 27);
@@ -111,7 +111,7 @@
             // 
             // buttonActualizar
             // 
-            this.buttonActualizar.Location = new System.Drawing.Point(231, 358);
+            this.buttonActualizar.Location = new System.Drawing.Point(238, 462);
             this.buttonActualizar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonActualizar.Name = "buttonActualizar";
             this.buttonActualizar.Size = new System.Drawing.Size(88, 27);
@@ -122,7 +122,7 @@
             // 
             // buttonBorrar
             // 
-            this.buttonBorrar.Location = new System.Drawing.Point(383, 358);
+            this.buttonBorrar.Location = new System.Drawing.Point(384, 462);
             this.buttonBorrar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonBorrar.Name = "buttonBorrar";
             this.buttonBorrar.Size = new System.Drawing.Size(88, 27);
@@ -133,7 +133,7 @@
             // 
             // buttonLimpiar
             // 
-            this.buttonLimpiar.Location = new System.Drawing.Point(524, 358);
+            this.buttonLimpiar.Location = new System.Drawing.Point(521, 462);
             this.buttonLimpiar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonLimpiar.Name = "buttonLimpiar";
             this.buttonLimpiar.Size = new System.Drawing.Size(88, 27);
@@ -144,7 +144,7 @@
             // 
             // buttonSalir
             // 
-            this.buttonSalir.Location = new System.Drawing.Point(652, 358);
+            this.buttonSalir.Location = new System.Drawing.Point(649, 462);
             this.buttonSalir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonSalir.Name = "buttonSalir";
             this.buttonSalir.Size = new System.Drawing.Size(88, 27);
@@ -155,7 +155,7 @@
             // 
             // buttonRevisiones
             // 
-            this.buttonRevisiones.Location = new System.Drawing.Point(595, 310);
+            this.buttonRevisiones.Location = new System.Drawing.Point(593, 370);
             this.buttonRevisiones.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonRevisiones.Name = "buttonRevisiones";
             this.buttonRevisiones.Size = new System.Drawing.Size(88, 27);
@@ -166,7 +166,7 @@
             // 
             // tNIF
             // 
-            this.tNIF.Location = new System.Drawing.Point(168, 200);
+            this.tNIF.Location = new System.Drawing.Point(166, 260);
             this.tNIF.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tNIF.Name = "tNIF";
             this.tNIF.Size = new System.Drawing.Size(571, 23);
@@ -174,7 +174,7 @@
             // 
             // tNombre
             // 
-            this.tNombre.Location = new System.Drawing.Point(168, 239);
+            this.tNombre.Location = new System.Drawing.Point(166, 299);
             this.tNombre.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tNombre.Name = "tNombre";
             this.tNombre.Size = new System.Drawing.Size(571, 23);
@@ -182,7 +182,7 @@
             // 
             // tApellidos
             // 
-            this.tApellidos.Location = new System.Drawing.Point(168, 275);
+            this.tApellidos.Location = new System.Drawing.Point(166, 335);
             this.tApellidos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tApellidos.Name = "tApellidos";
             this.tApellidos.Size = new System.Drawing.Size(571, 23);
@@ -192,7 +192,7 @@
             // 
             this.lEdad.FormattingEnabled = true;
             this.lEdad.ItemHeight = 15;
-            this.lEdad.Location = new System.Drawing.Point(168, 310);
+            this.lEdad.Location = new System.Drawing.Point(166, 370);
             this.lEdad.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lEdad.Name = "lEdad";
             this.lEdad.Size = new System.Drawing.Size(139, 34);
@@ -204,19 +204,19 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(91, 45);
+            this.dataGridView1.Location = new System.Drawing.Point(88, 60);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(649, 148);
+            this.dataGridView1.Size = new System.Drawing.Size(649, 175);
             this.dataGridView1.TabIndex = 16;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
-            // Revisiones
+            // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(849, 398);
+            this.ClientSize = new System.Drawing.Size(849, 552);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lEdad);
             this.Controls.Add(this.tApellidos);
@@ -234,7 +234,7 @@
             this.Controls.Add(this.labelNIF);
             this.Controls.Add(this.labelTitulo);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "Revisiones";
+            this.Name = "Clientes";
             this.Text = "Revisiones";
             this.Load += new System.EventHandler(this.Revisiones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

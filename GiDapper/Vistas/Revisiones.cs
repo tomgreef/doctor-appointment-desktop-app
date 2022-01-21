@@ -15,13 +15,14 @@ namespace GiDapper
         {
             InitializeComponent();
             this.client = client;
+            lCliente.Text = client.ToString();
             db = new EyeDb();
         }
 
 
         private void Clientes_Load(object sender, EventArgs e)
         {
-            dataGridViewClientes.DataSource = db.GetByNif(client.NIF);
+            dataGridViewClientes.DataSource = db.GetByNif(client.Nif);
         }
 
         private void dataGridViewClientes_SelectionChanged(object sender, EventArgs e)
@@ -39,7 +40,7 @@ namespace GiDapper
             if (seleccionado == null)
             {
                 dataGridViewClientes.ClearSelection();
-                dataGridViewClientes.DataSource = db.GetByNif(client.NIF);
+                dataGridViewClientes.DataSource = db.GetByNif(client.Nif);
                 textBox_od_espera.Text = "";
                 textBox_oi_espera.Text = "";
                 textBox_od_cilindro.Text = "";
@@ -89,7 +90,7 @@ namespace GiDapper
         {
             var eye = new Eye
             {
-                NIF = client.NIF,
+                Nif = client.Nif,
                 Consulta = monthCalendar.SelectionRange.Start,
                 OdEsfera = Convert.ToDouble(textBox_od_espera.Text),
                 OiEsfera = Convert.ToDouble(textBox_oi_espera.Text),
