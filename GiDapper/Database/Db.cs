@@ -10,7 +10,7 @@ namespace GiDapper
     {
         private static readonly string _connectionString = Settings.Default.ConnectionString;
 
-        public void Create(T elem) => Query((c => c.Insert<T>(elem)));
+        public void Create(T elem) => Query(c => c.Insert<T>(elem));
 
         public T GetById(string id) => QueryScalar(c => c.Get<T>(id));
 
