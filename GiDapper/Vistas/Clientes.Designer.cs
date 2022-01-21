@@ -350,16 +350,5 @@
         private System.Windows.Forms.Button buttonLimpiar;
         private System.Windows.Forms.Button buttonSalir;
         private System.Windows.Forms.DataGridView dataGridViewClientes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nIFDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cONSULTADataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oDESFERADataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oDCILINDRODataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oDADICIONDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oDAGUDEZADataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oIESFERADataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oICILINDRODataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oIADICIONDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oIAGUDEZADataGridViewTextBoxColumn;
     }
 }
