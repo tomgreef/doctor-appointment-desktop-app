@@ -1,12 +1,11 @@
-﻿using Dapper.Contrib.Extensions;
-using System;
+﻿using System;
 
 namespace GiDapper
 {
     public class Eye
     {
-        public int ID { get; set; }
-        public string NIF { get; set; }
+        public int Id { get; set; }
+        public string Nif { get; set; }
         public DateTime Consulta { get; set; }
         public double OdEsfera { get; set; }
         public double OdCilindro { get; set; }

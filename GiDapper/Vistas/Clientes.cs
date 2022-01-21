@@ -95,7 +95,7 @@ namespace GiDapper
                     Edad = (int)lEdad.SelectedItem,
                 };
 
-                db.Insert(c);
+                db.Create(c);
 
                 seleccionado = null;
                 MuestraSeleccionado();
