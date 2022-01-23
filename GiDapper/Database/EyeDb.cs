@@ -1,6 +1,8 @@
 ﻿using Dapper;
 using System.Collections.Generic;
+
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace GiDapper.Database
 {
@@ -28,9 +30,9 @@ namespace GiDapper.Database
 
         public void Create(Eye eye)
         {
-            string sql = "INSERT INTO tEye" +
+            string sql = "INSERT INTO [GIO].[dbo].[tEye]" +
                 "VALUES(@Nif, @Consulta, @OdEsfera, @OdCilindro, @OdAdicion, " +
-                "@OdAgudeza, @OiEsfera, @OiCilindro, @OiAdicion, @OiAgudeza)";
+                "@OdAgudeza, @OiEsfera, @OiCilindro, @OiAdicion, @OiAgudeza)";  
             using SqlConnection c = new(_connectionString);
             c.Execute(sql, param: eye);
         }
