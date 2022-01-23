@@ -78,49 +78,71 @@ namespace GiDapper
 
         private void buttonBorrar_Click(object sender, EventArgs e)
         {
-            if (seleccionado != null)
+            try
             {
-                db.Delete(seleccionado);
-                seleccionado = null;
-                MostrarSeleccionado();
+                if (seleccionado != null)
+                {
+                    db.Delete(seleccionado);
+                    seleccionado = null;
+                    MostrarSeleccionado();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message);
             }
         }
 
         private void buttonAñadir_Click(object sender, EventArgs e)
         {
-            var eye = new Eye
+            try
             {
-                Nif = client.Nif,
-                Consulta = monthCalendar.SelectionRange.Start,
-                OdEsfera = Convert.ToDouble(textBox_od_espera.Text),
-                OiEsfera = Convert.ToDouble(textBox_oi_espera.Text),
-                OdCilindro = Convert.ToDouble(textBox_od_cilindro.Text),
-                OiCilindro = Convert.ToDouble(textBox_oi_cilindro.Text),
-                OdAgudeza = Convert.ToDouble(textBox_od_agudeza.Text),
-                OiAgudeza = Convert.ToDouble(textBox_oi_agudeza.Text),
-                OdAdicion = Convert.ToDouble(textBox_od_adicion.Text),
-                OiAdicion = Convert.ToDouble(textBox_oi_adicion.Text)
-            };
-            db.Create(eye);
-            seleccionado = null;
-            MostrarSeleccionado();
+                var eye = new Eye
+                {
+                    Nif = client.Nif,
+                    Consulta = monthCalendar.SelectionRange.Start,
+                    OdEsfera = Convert.ToDouble(textBox_od_espera.Text),
+                    OiEsfera = Convert.ToDouble(textBox_oi_espera.Text),
+                    OdCilindro = Convert.ToDouble(textBox_od_cilindro.Text),
+                    OiCilindro = Convert.ToDouble(textBox_oi_cilindro.Text),
+                    OdAgudeza = Convert.ToDouble(textBox_od_agudeza.Text),
+                    OiAgudeza = Convert.ToDouble(textBox_oi_agudeza.Text),
+                    OdAdicion = Convert.ToDouble(textBox_od_adicion.Text),
+                    OiAdicion = Convert.ToDouble(textBox_oi_adicion.Text)
+                };
+                db.Create(eye);
+                seleccionado = null;
+                MostrarSeleccionado();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message);
+            }
         }
 
         private void buttonActualizar_Click(object sender, EventArgs e)
         {
-            seleccionado.OdEsfera = Convert.ToDouble(textBox_od_espera.Text);
-            seleccionado.OiEsfera = Convert.ToDouble(textBox_oi_espera.Text);
-            seleccionado.OdCilindro = Convert.ToDouble(textBox_od_cilindro.Text);
-            seleccionado.OiCilindro = Convert.ToDouble(textBox_oi_cilindro.Text);
-            seleccionado.OdAgudeza = Convert.ToDouble(textBox_od_agudeza.Text);
-            seleccionado.OiAgudeza = Convert.ToDouble(textBox_oi_agudeza.Text);
-            seleccionado.OdAdicion = Convert.ToDouble(textBox_od_adicion.Text);
-            seleccionado.OiAdicion = Convert.ToDouble(textBox_oi_adicion.Text);
-            seleccionado.Consulta = monthCalendar.SelectionRange.Start;
-            
-            db.Update(seleccionado);
-            seleccionado = null;
-            MostrarSeleccionado();
+            try
+            {
+                seleccionado.OdEsfera = Convert.ToDouble(textBox_od_espera.Text);
+                seleccionado.OiEsfera = Convert.ToDouble(textBox_oi_espera.Text);
+                seleccionado.OdCilindro = Convert.ToDouble(textBox_od_cilindro.Text);
+                seleccionado.OiCilindro = Convert.ToDouble(textBox_oi_cilindro.Text);
+                seleccionado.OdAgudeza = Convert.ToDouble(textBox_od_agudeza.Text);
+                seleccionado.OiAgudeza = Convert.ToDouble(textBox_oi_agudeza.Text);
+                seleccionado.OdAdicion = Convert.ToDouble(textBox_od_adicion.Text);
+                seleccionado.OiAdicion = Convert.ToDouble(textBox_oi_adicion.Text);
+                seleccionado.Consulta = monthCalendar.SelectionRange.Start;
+
+                db.Update(seleccionado);
+                seleccionado = null;
+                MostrarSeleccionado();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message);
+            }
         }
     }
 }
