@@ -17,6 +17,7 @@ namespace GESDAPPER
         private Eye seleccionado;
         private Client main;
         private static readonly string _connectionString = Properties.Settings.Default.ConnectionString;
+        
         public Clientes(Client client)
         {
             InitializeComponent();
@@ -78,13 +79,12 @@ namespace GESDAPPER
                 textBox_oi_adicion.Text = seleccionado.OiAdicion.ToString();
                 textBox_od_agudeza.Text = seleccionado.OdAgudeza.ToString();
                 textBox_oi_agudeza.Text = seleccionado.OiAgudeza.ToString(); ;
-                monthCalendar.SetDate(seleccionado.Consulta);
+                monthCalendar.SetDate(DateTime.Parse(seleccionado.Consulta));
             }
         }
 
         private void buttonLimpiar_Click(object sender, EventArgs e)
         {
-            
             this.tEyeTableAdapter.Fill(this.gIODataSet.tEye);
             dataGridViewClientes.ClearSelection();
             textBox_od_espera.Text = "";
@@ -117,15 +117,13 @@ namespace GESDAPPER
 
         private void buttonAñadir_Click(object sender, EventArgs e)
         {
-            Dapper.DefaultTypeMap.MatchNamesWithUnderscores = true;
 
             Db db = new Db();
             var eye = new Eye
             {
-
-                
+                ID = 0,
                 Cliente = main,
-                Consulta = monthCalendar.SelectionRange.Start,
+                Consulta = monthCalendar.ToString(),
                 OdEsfera = Convert.ToDouble(textBox_od_espera.Text),
                 OiEsfera = Convert.ToDouble(textBox_oi_espera.Text),
                 OdCilindro = Convert.ToDouble(textBox_od_cilindro.Text),
