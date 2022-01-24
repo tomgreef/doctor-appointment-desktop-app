@@ -1,6 +1,7 @@
 using Dapper;
 using System;
 using System.Windows.Forms;
+using GiDapper.Vistas;
 
 namespace GiDapper
 {

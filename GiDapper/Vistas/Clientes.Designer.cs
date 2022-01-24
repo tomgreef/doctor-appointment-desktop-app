@@ -1,4 +1,4 @@
-﻿namespace GiDapper
+﻿namespace GiDapper.Vistas
 {
     partial class Clientes
     {

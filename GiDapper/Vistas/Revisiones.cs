@@ -1,28 +1,28 @@
-﻿using GiDapper.Database;
-using System;
+﻿using System;
 using System.Windows.Forms;
+using GiDapper.Database;
+using GiDapper.Modelos;
 
-
-namespace GiDapper
+namespace GiDapper.Vistas
 {
     public partial class Revisiones : Form
     {
-        private Eye seleccionado;
-        private readonly Client client;
-        private readonly EyeDb db;
+        private Eye _seleccionado;
+        private readonly Client _client;
+        private readonly EyeDb _db;
         
         public Revisiones(Client client)
         {
             InitializeComponent();
-            this.client = client;
+            this._client = client;
             lCliente.Text = client.ToString();
-            db = new EyeDb();
+            _db = new EyeDb();
         }
 
 
         private void Clientes_Load(object sender, EventArgs e)
         {
-            dataGridViewClientes.DataSource = db.GetByNif(client.Nif);
+            dataGridViewClientes.DataSource = _db.GetByNif(_client.Nif);
         }
 
         private void dataGridViewClientes_SelectionChanged(object sender, EventArgs e)
@@ -30,44 +30,44 @@ namespace GiDapper
             if (dataGridViewClientes.SelectedRows.Count > 0)
             {
                 string id = dataGridViewClientes.SelectedRows[0].Cells[0].Value.ToString();
-                seleccionado = db.GetById(id);
+                _seleccionado = _db.GetById(id);
                 MostrarSeleccionado();
             }
         }
 
         private void MostrarSeleccionado()
         {
-            if (seleccionado == null)
+            if (_seleccionado == null)
             {
                 dataGridViewClientes.ClearSelection();
-                dataGridViewClientes.DataSource = db.GetByNif(client.Nif);
-                textBox_od_espera.Text = "";
-                textBox_oi_espera.Text = "";
-                textBox_od_cilindro.Text = "";
-                textBox_oi_cilindro.Text = "";
-                textBox_od_adicion.Text = "";
-                textBox_oi_adicion.Text = "";
-                textBox_od_agudeza.Text = "";
-                textBox_oi_agudeza.Text = "";
+                dataGridViewClientes.DataSource = _db.GetByNif(_client.Nif);
+                textBox_od_espera.ResetText();
+                textBox_oi_espera.ResetText();
+                textBox_od_cilindro.ResetText();
+                textBox_oi_cilindro.ResetText();
+                textBox_od_adicion.ResetText();
+                textBox_oi_adicion.ResetText();
+                textBox_od_agudeza.ResetText();
+                textBox_oi_agudeza.ResetText();
                 monthCalendar.SetDate(DateTime.Today);
             }
             else
             {
-                textBox_od_espera.Text = seleccionado.OdEsfera.ToString();
-                textBox_oi_espera.Text = seleccionado.OiEsfera.ToString();
-                textBox_od_cilindro.Text = seleccionado.OdCilindro.ToString();
-                textBox_oi_cilindro.Text = seleccionado.OiCilindro.ToString();
-                textBox_od_adicion.Text = seleccionado.OdAdicion.ToString();
-                textBox_oi_adicion.Text = seleccionado.OiAdicion.ToString();
-                textBox_od_agudeza.Text = seleccionado.OdAgudeza.ToString();
-                textBox_oi_agudeza.Text = seleccionado.OiAgudeza.ToString();
-                monthCalendar.SetDate(seleccionado.Consulta);
+                textBox_od_espera.Text = _seleccionado.OdEsfera.ToString();
+                textBox_oi_espera.Text = _seleccionado.OiEsfera.ToString();
+                textBox_od_cilindro.Text = _seleccionado.OdCilindro.ToString();
+                textBox_oi_cilindro.Text = _seleccionado.OiCilindro.ToString();
+                textBox_od_adicion.Text = _seleccionado.OdAdicion.ToString();
+                textBox_oi_adicion.Text = _seleccionado.OiAdicion.ToString();
+                textBox_od_agudeza.Text = _seleccionado.OdAgudeza.ToString();
+                textBox_oi_agudeza.Text = _seleccionado.OiAgudeza.ToString();
+                monthCalendar.SetDate(_seleccionado.Consulta);
             }
         }
 
         private void buttonLimpiar_Click(object sender, EventArgs e)
         {
-            seleccionado = null;
+            _seleccionado = null;
             MostrarSeleccionado();
         }
 
@@ -78,14 +78,17 @@ namespace GiDapper
 
         private void buttonBorrar_Click(object sender, EventArgs e)
         {
+            if (_seleccionado == null)
+            {
+                MessageBox.Show("Seleccione una revisión");
+                return;
+            }
+
             try
             {
-                if (seleccionado != null)
-                {
-                    db.Delete(seleccionado);
-                    seleccionado = null;
-                    MostrarSeleccionado();
-                }
+                _db.Delete(_seleccionado);
+                _seleccionado = null;
+                MostrarSeleccionado();
             }
             catch (Exception ex)
             {
@@ -99,7 +102,7 @@ namespace GiDapper
             {
                 var eye = new Eye
                 {
-                    Nif = client.Nif,
+                    Nif = _client.Nif,
                     Consulta = monthCalendar.SelectionRange.Start,
                     OdEsfera = Convert.ToDouble(textBox_od_espera.Text),
                     OiEsfera = Convert.ToDouble(textBox_oi_espera.Text),
@@ -110,8 +113,8 @@ namespace GiDapper
                     OdAdicion = Convert.ToDouble(textBox_od_adicion.Text),
                     OiAdicion = Convert.ToDouble(textBox_oi_adicion.Text)
                 };
-                db.Create(eye);
-                seleccionado = null;
+                _db.Create(eye);
+                _seleccionado = null;
                 MostrarSeleccionado();
 
             }
@@ -123,20 +126,26 @@ namespace GiDapper
 
         private void buttonActualizar_Click(object sender, EventArgs e)
         {
+            if (_seleccionado == null)
+            {
+                MessageBox.Show("Seleccione una revisión");
+                return;
+            }
+
             try
             {
-                seleccionado.OdEsfera = Convert.ToDouble(textBox_od_espera.Text);
-                seleccionado.OiEsfera = Convert.ToDouble(textBox_oi_espera.Text);
-                seleccionado.OdCilindro = Convert.ToDouble(textBox_od_cilindro.Text);
-                seleccionado.OiCilindro = Convert.ToDouble(textBox_oi_cilindro.Text);
-                seleccionado.OdAgudeza = Convert.ToDouble(textBox_od_agudeza.Text);
-                seleccionado.OiAgudeza = Convert.ToDouble(textBox_oi_agudeza.Text);
-                seleccionado.OdAdicion = Convert.ToDouble(textBox_od_adicion.Text);
-                seleccionado.OiAdicion = Convert.ToDouble(textBox_oi_adicion.Text);
-                seleccionado.Consulta = monthCalendar.SelectionRange.Start;
+                _seleccionado.OdEsfera = Convert.ToDouble(textBox_od_espera.Text);
+                _seleccionado.OiEsfera = Convert.ToDouble(textBox_oi_espera.Text);
+                _seleccionado.OdCilindro = Convert.ToDouble(textBox_od_cilindro.Text);
+                _seleccionado.OiCilindro = Convert.ToDouble(textBox_oi_cilindro.Text);
+                _seleccionado.OdAgudeza = Convert.ToDouble(textBox_od_agudeza.Text);
+                _seleccionado.OiAgudeza = Convert.ToDouble(textBox_oi_agudeza.Text);
+                _seleccionado.OdAdicion = Convert.ToDouble(textBox_od_adicion.Text);
+                _seleccionado.OiAdicion = Convert.ToDouble(textBox_oi_adicion.Text);
+                _seleccionado.Consulta = monthCalendar.SelectionRange.Start;
 
-                db.Update(seleccionado);
-                seleccionado = null;
+                _db.Update(_seleccionado);
+                _seleccionado = null;
                 MostrarSeleccionado();
             }
             catch (Exception ex)

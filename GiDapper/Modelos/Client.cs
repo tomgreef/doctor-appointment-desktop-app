@@ -1,4 +1,4 @@
-﻿namespace GiDapper
+﻿namespace GiDapper.Modelos
 {
     public class Client
     {

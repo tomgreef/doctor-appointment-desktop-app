@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 using System.Data.SqlClient;
-using System.Windows.Forms;
+using GiDapper.Modelos;
 
 namespace GiDapper.Database
 {
@@ -30,7 +30,7 @@ namespace GiDapper.Database
 
         public void Create(Eye eye)
         {
-            string sql = "INSERT INTO [GIO].[dbo].[tEye]" +
+            string sql = "INSERT INTO tEye " +
                 "VALUES(@Nif, @Consulta, @OdEsfera, @OdCilindro, @OdAdicion, " +
                 "@OdAgudeza, @OiEsfera, @OiCilindro, @OiAdicion, @OiAgudeza)";  
             using SqlConnection c = new(_connectionString);
@@ -57,13 +57,6 @@ namespace GiDapper.Database
             string sql = "SELECT * FROM tEye WHERE nif = @Nif";
             using SqlConnection c = new(_connectionString);
             return c.Query<Eye>(sql, param: new { Nif = nif });
-        }
-
-        public IEnumerable<Eye> GetAll()
-        {
-            string sql = "SELECT * FROM tEye";
-            using SqlConnection c = new(_connectionString);
-            return c.Query<Eye>(sql);
         }
     }
 }

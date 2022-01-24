@@ -1,30 +1,31 @@
-﻿using GiDapper.Database;
-using System;
+﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using GiDapper.Database;
+using GiDapper.Modelos;
 
-namespace GiDapper
+namespace GiDapper.Vistas
 {
     public partial class Clientes : Form
     {
-        private Client seleccionado = null;
-        private const int MAX_AGE = 130;
-
-        private readonly ClientDb db;
+        private Client _seleccionado;
+        private const int MaxAge = 130;
+        
+        private readonly ClientDb _db;
 
         public Clientes()
         {
             InitializeComponent();
-            db = new ClientDb();
+            _db = new ClientDb();
         }
 
         private void Revisiones_Load(object sender, EventArgs e)
         {
             try
             {
-                dataGridView1.DataSource = db.GetAll().ToList();
+                dataGridView1.DataSource = _db.GetAll().ToList();
 
-                for (int i = 0; i < MAX_AGE; i++)
+                for (var i = 0; i < MaxAge; i++)
                 {
                     lEdad.Items.Add(i);
                 }
@@ -37,10 +38,10 @@ namespace GiDapper
 
         private void MuestraSeleccionado()
         {
-            if (seleccionado == null)
+            if (_seleccionado == null)
             {
                 this.dataGridView1.ClearSelection();
-                dataGridView1.DataSource = db.GetAll().ToList();
+                dataGridView1.DataSource = _db.GetAll().ToList();
 
                 tNIF.ResetText();
                 tNombre.ResetText();
@@ -49,10 +50,10 @@ namespace GiDapper
             }
             else
             {
-                tNIF.Text = seleccionado.Nif;
-                tNombre.Text = seleccionado.Nombre;
-                tApellidos.Text = seleccionado.Apellidos;
-                lEdad.SelectedItem = (int)seleccionado.Edad;
+                tNIF.Text = _seleccionado.Nif;
+                tNombre.Text = _seleccionado.Nombre;
+                tApellidos.Text = _seleccionado.Apellidos;
+                lEdad.SelectedItem = _seleccionado.Edad;
             }
         }
 
@@ -60,9 +61,9 @@ namespace GiDapper
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                string NIF = (string)this.dataGridView1.SelectedRows[0].Cells[0].Value;
+                string nif = (string)dataGridView1.SelectedRows[0].Cells[0].Value;
 
-                seleccionado = db.GetById(NIF);
+                _seleccionado = _db.GetById(nif);
 
                 MuestraSeleccionado();
             }
@@ -70,21 +71,29 @@ namespace GiDapper
 
         private void buttonRevisiones_Click(object sender, EventArgs e)
         {
-            if (seleccionado == null)
+            if (_seleccionado == null)
             {
                 MessageBox.Show("Seleccione un cliente");
+                return;
             }
-            else
-            {
-                Revisiones cliente = new(seleccionado);
-                this.Visible = false;
-                cliente.ShowDialog();
-                this.Visible = true;
-            }
+
+            Revisiones cliente = new(_seleccionado);
+            Visible = false;
+            cliente.ShowDialog();
+            Visible = true;
         }
 
         private void bIns_Click(object sender, EventArgs e)
         {
+            if(lEdad.SelectedIndex == -1
+                || string.IsNullOrEmpty(tNIF.Text)
+                || string.IsNullOrWhiteSpace(tNombre.Text)
+                || string.IsNullOrWhiteSpace(tApellidos.Text))
+            {
+                MessageBox.Show("Rellene todos los campos");
+                return;
+            }
+
             try
             {
                 Client c = new()
@@ -95,9 +104,9 @@ namespace GiDapper
                     Edad = (int)lEdad.SelectedItem,
                 };
 
-                db.Create(c);
+                _db.Create(c);
 
-                seleccionado = null;
+                _seleccionado = null;
                 MuestraSeleccionado();
             }
             catch (Exception ex)
@@ -108,18 +117,24 @@ namespace GiDapper
 
         private void bUpd_Click(object sender, EventArgs e)
         {
+            if (_seleccionado == null)
+            {
+                MessageBox.Show("Seleccione un cliente");
+                return;
+            }
+
             try
             {
 
-                string id = seleccionado.Nif;
-                seleccionado.Nif = tNIF.Text;
-                seleccionado.Nombre = tNombre.Text;
-                seleccionado.Apellidos = tApellidos.Text;
-                seleccionado.Edad = (int)lEdad.SelectedItem;
+                var id = _seleccionado.Nif;
+                _seleccionado.Nif = tNIF.Text;
+                _seleccionado.Nombre = tNombre.Text;
+                _seleccionado.Apellidos = tApellidos.Text;
+                _seleccionado.Edad = (int)lEdad.SelectedItem;
 
-                db.Update(id, seleccionado);
+                _db.Update(id, _seleccionado);
 
-                seleccionado = null;
+                _seleccionado = null;
                 MuestraSeleccionado();
             }
             catch (Exception ex)
@@ -131,11 +146,17 @@ namespace GiDapper
 
         private void bDel_Click(object sender, EventArgs e)
         {
+            if (_seleccionado == null)
+            {
+                MessageBox.Show("Seleccione un cliente");
+                return;
+            }
+
             try
             {
-                db.Delete(seleccionado);
+                _db.Delete(_seleccionado);
 
-                seleccionado = null;
+                _seleccionado = null;
                 MuestraSeleccionado();
             }
             catch (Exception ex)
@@ -146,14 +167,13 @@ namespace GiDapper
 
         private void buttonSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void buttonLimpiar_Click(object sender, EventArgs e)
         {
-            seleccionado = null;
+            _seleccionado = null;
             MuestraSeleccionado();
         }
-
     }
 }

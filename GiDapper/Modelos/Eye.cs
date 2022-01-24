@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GiDapper
+namespace GiDapper.Modelos
 {
     public class Eye
     {
