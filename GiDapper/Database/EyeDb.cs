@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 using System.Data.SqlClient;
-using System.Windows.Forms;
+using GiDapper.Modelos;
 
 namespace GiDapper.Database
 {
@@ -57,13 +57,6 @@ namespace GiDapper.Database
             string sql = "SELECT * FROM tEye WHERE nif = @Nif";
             using SqlConnection c = new(_connectionString);
             return c.Query<Eye>(sql, param: new { Nif = nif });
-        }
-
-        public IEnumerable<Eye> GetAll()
-        {
-            string sql = "SELECT * FROM tEye";
-            using SqlConnection c = new(_connectionString);
-            return c.Query<Eye>(sql);
         }
     }
 }
