@@ -30,7 +30,7 @@ namespace GiDapper.Database
 
         public void Create(Eye eye)
         {
-            string sql = "INSERT INTO [GIO].[dbo].[tEye]" +
+            string sql = "INSERT INTO tEye " +
                 "VALUES(@Nif, @Consulta, @OdEsfera, @OdCilindro, @OdAdicion, " +
                 "@OdAgudeza, @OiEsfera, @OiCilindro, @OiAdicion, @OiAgudeza)";  
             using SqlConnection c = new(_connectionString);
