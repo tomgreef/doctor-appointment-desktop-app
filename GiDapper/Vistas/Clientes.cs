@@ -73,18 +73,26 @@ namespace GiDapper
             if (seleccionado == null)
             {
                 MessageBox.Show("Seleccione un cliente");
+                return;
             }
-            else
-            {
-                Revisiones cliente = new(seleccionado);
-                this.Visible = false;
-                cliente.ShowDialog();
-                this.Visible = true;
-            }
+
+            Revisiones cliente = new(seleccionado);
+            this.Visible = false;
+            cliente.ShowDialog();
+            this.Visible = true;
         }
 
         private void bIns_Click(object sender, EventArgs e)
         {
+            if(lEdad.SelectedIndex == -1
+                || String.IsNullOrEmpty(tNIF.Text)
+                || String.IsNullOrWhiteSpace(tNombre.Text)
+                || String.IsNullOrWhiteSpace(tApellidos.Text))
+            {
+                MessageBox.Show("Rellene todos los campos");
+                return;
+            }
+
             try
             {
                 Client c = new()
@@ -108,6 +116,12 @@ namespace GiDapper
 
         private void bUpd_Click(object sender, EventArgs e)
         {
+            if (seleccionado == null)
+            {
+                MessageBox.Show("Seleccione un cliente");
+                return;
+            }
+
             try
             {
 
@@ -131,6 +145,12 @@ namespace GiDapper
 
         private void bDel_Click(object sender, EventArgs e)
         {
+            if (seleccionado == null)
+            {
+                MessageBox.Show("Seleccione un cliente");
+                return;
+            }
+
             try
             {
                 db.Delete(seleccionado);
@@ -154,6 +174,5 @@ namespace GiDapper
             seleccionado = null;
             MuestraSeleccionado();
         }
-
     }
 }

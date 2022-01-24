@@ -41,14 +41,14 @@ namespace GiDapper
             {
                 dataGridViewClientes.ClearSelection();
                 dataGridViewClientes.DataSource = db.GetByNif(client.Nif);
-                textBox_od_espera.Text = "";
-                textBox_oi_espera.Text = "";
-                textBox_od_cilindro.Text = "";
-                textBox_oi_cilindro.Text = "";
-                textBox_od_adicion.Text = "";
-                textBox_oi_adicion.Text = "";
-                textBox_od_agudeza.Text = "";
-                textBox_oi_agudeza.Text = "";
+                textBox_od_espera.ResetText();
+                textBox_oi_espera.ResetText();
+                textBox_od_cilindro.ResetText();
+                textBox_oi_cilindro.ResetText();
+                textBox_od_adicion.ResetText();
+                textBox_oi_adicion.ResetText();
+                textBox_od_agudeza.ResetText();
+                textBox_oi_agudeza.ResetText();
                 monthCalendar.SetDate(DateTime.Today);
             }
             else
@@ -78,14 +78,17 @@ namespace GiDapper
 
         private void buttonBorrar_Click(object sender, EventArgs e)
         {
+            if (seleccionado == null)
+            {
+                MessageBox.Show("Seleccione una revisión");
+                return;
+            }
+
             try
             {
-                if (seleccionado != null)
-                {
-                    db.Delete(seleccionado);
-                    seleccionado = null;
-                    MostrarSeleccionado();
-                }
+                db.Delete(seleccionado);
+                seleccionado = null;
+                MostrarSeleccionado();
             }
             catch (Exception ex)
             {
@@ -123,6 +126,12 @@ namespace GiDapper
 
         private void buttonActualizar_Click(object sender, EventArgs e)
         {
+            if (seleccionado == null)
+            {
+                MessageBox.Show("Seleccione una revisión");
+                return;
+            }
+
             try
             {
                 seleccionado.OdEsfera = Convert.ToDouble(textBox_od_espera.Text);
